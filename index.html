@@ -11,7 +11,7 @@
   gtag('config', 'G-4XT2JGWVQC');
 </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- Security: CSP to prevent XSS while allowing necessary CDNs -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval';">
 
@@ -139,6 +139,7 @@
 
     <style>
         html { scroll-behavior: smooth; }
+        body, html { overflow-x: hidden; width: 100%; position: relative; }
         .card-shadow { box-shadow: 0 10px 40px rgba(0,0,0,0.04); }
         .dark .card-shadow { box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
         .rotate-hover:hover { transform: rotate(5deg) scale(1.1); }
@@ -174,7 +175,7 @@
         .nav-link.active { color: #4f46e5; }
     </style>
 </head>
-<body class="bg-white dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-200 transition-colors duration-300">
+<body class="bg-white dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-200 transition-colors duration-300 overflow-x-hidden">
 
     <!-- Feature: Page Loader (First Load Only) -->
     <div id="page-loader" class="fixed inset-0 bg-white dark:bg-gray-900 z-[9999] flex items-center justify-center">
@@ -252,7 +253,7 @@
                 <div class="relative">
                     <!-- Performance: Eager loading for LCP -->
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Team" loading="eager" class="rounded-[3rem] shadow-2xl w-full h-[350px] md:h-[500px] object-cover">
-                    <div class="absolute -bottom-8 -left-8 bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-2xl border border-gray-50 dark:border-gray-700 flex items-center space-x-4">
+                    <div class="absolute -bottom-8 left-4 md:-left-8 bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-2xl border border-gray-50 dark:border-gray-700 flex items-center space-x-4 max-w-[90%]">
                         <div class="flex -space-x-3">
                             <img src="https://i.pravatar.cc/100?u=1" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800">
                             <img src="https://i.pravatar.cc/100?u=2" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800">
