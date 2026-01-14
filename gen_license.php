@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>License Generator</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #fff;
+}
+
+.card {
+  width: 100%;
+  max-width: 820px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 22px;
+  font-size: 1.5rem;
+}
+
+label {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+input, textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+  padding: 14px;
+  font-size: 14px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.generate-btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(90deg,#00c6ff,#00eaff);
+  color: #000;
+  margin: 14px 0 26px;
+}
+
+.section {
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 22px;
+}
+
+.section-title {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.copy-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: #2ecc71;
+  color: #000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>License Snippet Generator</h1>
+
+  <label>License Key</label>
+  <input id="key" placeholder="License Key">
+
+  <label>Expiry Date</label>
+  <input id="expiry" type="date">
+
+  <label>Authorized Domains</label>
+  <input id="domains" placeholder="domain">
+
+  <label>Note</label>
+  <input id="note" placeholder="Note">
+
+  <!-- Generate -->
+  <button class="generate-btn" onclick="generate()">Generate</button>
+
+  <!-- JSON OUTPUT -->
+  <div class="section">
+    <div class="section-title">JSON Snippet (Paste into licenses)</div>
+    <textarea id="jsonOutput" rows="8" readonly></textarea>
+    <button class="copy-btn" onclick="copyJSON()">Copy JSON</button>
+  </div>
+
+  <!-- BASE64 OUTPUT -->
+  <div class="section">
+    <div class="section-title">Base64 Encoded License (Separate)</div>
+    <input id="b64Output" readonly>
+    <button class="copy-btn" onclick="copyB64()">Copy License</button>
+  </div>
+
+</div>
+
+<script>
+function generate() {
+  const key = document.getElementById("key").value.trim().toUpperCase();
+  const expiry = document.getElementById("expiry").value;
+  const domains = document.getElementById("domains").value
+    .split(",").map(d => d.trim()).filter(Boolean);
+  const note = document.getElementById("note").value || "";
+
+  if (!key || !expiry) {
+    alert("License key and expiry required");
+    return;
+  }
+
+  document.getElementById("b64Output").value =
+    btoa(unescape(encodeURIComponent(key)));
+
+  document.getElementById("jsonOutput").value =
+`"${key}": {
+  "expiry": "${expiry}",
+  "authorized_target": ${JSON.stringify(domains)},
+  "custom_code": { "enabled": false, "code": "" },
+  "note": "${note}"
+}`;
+}
+
+function copyJSON() {
+  const el = document.getElementById("jsonOutput");
+  el.select();
+  navigator.clipboard.writeText(el.value);
+}
+
+function copyB64() {
+  const el = document.getElementById("b64Output");
+  el.select();
+  navigator.clipboard.writeText(el.value);
+}
+</script>
+
+</body>
+</html>
