@@ -11,7 +11,7 @@
   gtag('config', 'G-4XT2JGWVQC');
 </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Security: CSP to prevent XSS while allowing necessary CDNs -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval';">
     <meta name="theme-color" content="#4f46e5">
@@ -121,7 +121,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
     <script>
         tailwind.config = {
@@ -204,7 +204,7 @@
                 <a href="#home" class="nav-link hover:text-indigo-600 transition">Home</a>
                 <a href="#services" class="nav-link hover:text-indigo-600 transition">Services</a>
                 <a href="source.html" class="nav-link hover:text-indigo-600 transition">Solutions Marketplace</a>
-                <button onclick="toggleModal('callback-modal')" class="hover:text-indigo-600 transition">Callback</button>
+                <button onclick="toggleModal('callback-modal')" class="hover:text-indigo-600 transition" aria-label="Request Callback">Callback</button>
             </div>
 
             <div class="flex items-center space-x-4">
@@ -216,24 +216,25 @@
         </div>
     </nav>
 
+    <main id="main-content">
     <header id="home" class="pt-20 pb-20 px-6 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row items-center gap-16">
             <div class="w-full md:w-1/2" data-aos="fade-right">
                 <h1 class="text-4xl md:text-6xl font-black text-gray-900 dark:text-white leading-tight mb-6">
                     Premium <span class="text-indigo-600 dark:text-indigo-400">Flutter App Source Code</span> & SaaS Kits
                 </h1>
-                <p class="text-gray-500 dark:text-gray-400 text-lg md:text-xl leading-relaxed mb-8">
+                <p class="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed mb-8">
                     Launch your startup instantly with our <strong>Laravel SaaS Starter Kits</strong> and <strong>Multi-Vendor App Source Code</strong>. Trusted by developers for high-quality, ready-made apps in India and globally.
                 </p>
                 
                 <div class="flex flex-wrap gap-4 mb-10">
                     <div class="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-2xl border border-indigo-100 dark:border-indigo-800 text-center min-w-[120px]">
                         <p class="text-2xl font-black text-indigo-600 dark:text-indigo-400">500+</p>
-                        <p class="text-[10px] uppercase font-black text-gray-400">Enterprise Deployments</p>
+                        <p class="text-[10px] uppercase font-black text-gray-500">Enterprise Deployments</p>
                     </div>
                     <div class="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-2xl border border-indigo-100 dark:border-indigo-800 text-center min-w-[120px]">
                         <p class="text-2xl font-black text-indigo-600 dark:text-indigo-400">2,000+</p>
-                        <p class="text-[10px] uppercase font-black text-gray-400">Active Licenses</p>
+                        <p class="text-[10px] uppercase font-black text-gray-500">Active Licenses</p>
                     </div>
                 </div>
 
@@ -255,7 +256,7 @@
                         </div>
                         <div>
                             <p class="text-sm font-black text-gray-900 dark:text-white">2,000+ Partners</p>
-                            <p class="text-[10px] text-gray-400 font-bold uppercase">Trusted Globally</p>
+                            <p class="text-[10px] text-gray-500 font-bold uppercase">Trusted Globally</p>
                         </div>
                     </div>
                 </div>
@@ -266,7 +267,7 @@
     <!-- Feature: Tech Stack Section -->
     <section class="py-12 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-            <p class="text-center text-xs font-bold uppercase text-gray-400 tracking-widest mb-8">Powered by Modern Tech Stacks</p>
+            <p class="text-center text-xs font-bold uppercase text-gray-500 tracking-widest mb-8">Powered by Modern Tech Stacks</p>
             <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
                 <div class="flex flex-col items-center gap-2 group">
                     <i class="fab fa-laravel text-4xl group-hover:text-red-600 transition"></i>
@@ -305,22 +306,22 @@
                 <div class="p-4 hover:-translate-y-1 transition duration-300">
                     <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 dark:text-indigo-400 text-2xl"><i class="fas fa-shield-alt"></i></div>
                     <h4 class="font-bold">Secure Transactions</h4>
-                    <p class="text-xs text-gray-500 mt-1">Encrypted & Protected</p>
+                    <p class="text-xs text-gray-600 mt-1">Encrypted & Protected</p>
                 </div>
                 <div class="p-4 hover:-translate-y-1 transition duration-300">
                     <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 dark:text-indigo-400 text-2xl"><i class="fas fa-code"></i></div>
                     <h4 class="font-bold">100% IP Ownership</h4>
-                    <p class="text-xs text-gray-500 mt-1">Complete Asset Transfer</p>
+                    <p class="text-xs text-gray-600 mt-1">Complete Asset Transfer</p>
                 </div>
                 <div class="p-4 hover:-translate-y-1 transition duration-300">
                     <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 dark:text-indigo-400 text-2xl"><i class="fas fa-headset"></i></div>
                     <h4 class="font-bold">Extended Warranty</h4>
-                    <p class="text-xs text-gray-500 mt-1">Technical Assurance</p>
+                    <p class="text-xs text-gray-600 mt-1">Technical Assurance</p>
                 </div>
                 <div class="p-4 hover:-translate-y-1 transition duration-300">
                     <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 dark:text-indigo-400 text-2xl"><i class="fas fa-globe"></i></div>
                     <h4 class="font-bold">Global Support</h4>
-                    <p class="text-xs text-gray-500 mt-1">Serving 12+ Markets</p>
+                    <p class="text-xs text-gray-600 mt-1">Serving 12+ Markets</p>
                 </div>
             </div>
 
@@ -332,7 +333,7 @@
                     </div>
                     <div class="text-center">
                         <p class="text-4xl font-black text-gray-900 dark:text-white counter" data-target="5">5+</p>
-                        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mt-2">Years Experience</p>
+                        <p class="text-xs font-bold text-gray-600 uppercase tracking-widest mt-2">Years Experience</p>
                     </div>
                 </div>
                 <div class="flex flex-col items-center p-6 rounded-3xl bg-white dark:bg-gray-800 shadow-lg border border-gray-100 dark:border-gray-700 hover:-translate-y-1 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="100">
@@ -341,7 +342,7 @@
                     </div>
                     <div class="text-center">
                         <p class="text-4xl font-black text-gray-900 dark:text-white counter" data-target="560">560+</p>
-                        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mt-2">Successful Projects</p>
+                        <p class="text-xs font-bold text-gray-600 uppercase tracking-widest mt-2">Successful Projects</p>
                     </div>
                 </div>
                 <div class="flex flex-col items-center p-6 rounded-3xl bg-white dark:bg-gray-800 shadow-lg border border-gray-100 dark:border-gray-700 hover:-translate-y-1 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="200">
@@ -350,7 +351,7 @@
                     </div>
                     <div class="text-center">
                         <p class="text-4xl font-black text-gray-900 dark:text-white counter" data-target="12">278+</p>
-                        <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mt-2">Global Markets</p>
+                        <p class="text-xs font-bold text-gray-600 uppercase tracking-widest mt-2">Global Markets</p>
                     </div>
                 </div>
             </div>
@@ -408,21 +409,21 @@
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3 class="text-xl font-black mb-4">Flutter App Source Code</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Native-performance mobile applications. Download clean, scalable <strong>Flutter source code</strong> for iOS & Android.</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Native-performance mobile applications. Download clean, scalable <strong>Flutter source code</strong> for iOS & Android.</p>
                 </div>
                 <div class="bg-gray-50 dark:bg-gray-800 p-10 rounded-[2.5rem] border border-transparent hover:border-indigo-600 transition duration-300 hover-sound" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-20 h-20 bg-indigo-100 dark:bg-indigo-900/50 rounded-2xl flex items-center justify-center mb-8 text-indigo-600 dark:text-indigo-400 text-3xl shadow-lg">
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3 class="text-xl font-black mb-4">Laravel SaaS Starter Kits</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Launch your SaaS faster. Robust <strong>Laravel source code</strong> designed for high traffic, security, and scalability.</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Launch your SaaS faster. Robust <strong>Laravel source code</strong> designed for high traffic, security, and scalability.</p>
                 </div>
                 <div class="bg-gray-50 dark:bg-gray-800 p-10 rounded-[2.5rem] border border-transparent hover:border-indigo-600 transition duration-300 hover-sound" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-20 h-20 bg-indigo-100 dark:bg-indigo-900/50 rounded-2xl flex items-center justify-center mb-8 text-indigo-600 dark:text-indigo-400 text-3xl shadow-lg">
                         <i class="fas fa-server"></i>
                     </div>
                     <h3 class="text-xl font-black mb-4">Cloud Infrastructure</h3>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Secure VPS configuration, automated CI/CD pipelines, and server hardening for production environments.</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">Secure VPS configuration, automated CI/CD pipelines, and server hardening for production environments.</p>
                 </div>
             </div>
         </div>
@@ -437,7 +438,7 @@
                 <div class="flex flex-col md:flex-row items-center justify-between mb-12 relative z-10" data-aos="fade-right">
                     <div class="w-full md:w-5/12 text-center md:text-right order-2 md:order-1">
                         <h3 class="text-xl font-black">1. Discovery & Strategy</h3>
-                        <p class="text-sm text-gray-500 mt-2">We analyze your business goals and technical requirements to create a strategic roadmap.</p>
+                        <p class="text-sm text-gray-600 mt-2">We analyze your business goals and technical requirements to create a strategic roadmap.</p>
                     </div>
                     <div class="w-10 h-10 bg-indigo-600 rounded-full border-4 border-white dark:border-gray-900 flex items-center justify-center text-white font-bold order-1 md:order-2 mb-4 md:mb-0">1</div>
                     <div class="w-full md:w-5/12 order-3"></div>
@@ -448,14 +449,14 @@
                     <div class="w-10 h-10 bg-indigo-600 rounded-full border-4 border-white dark:border-gray-900 flex items-center justify-center text-white font-bold order-1 md:order-2 mb-4 md:mb-0">2</div>
                     <div class="w-full md:w-5/12 text-center md:text-left order-2 md:order-3">
                         <h3 class="text-xl font-black">2. Agile Development</h3>
-                        <p class="text-sm text-gray-500 mt-2">Iterative sprints with regular updates, transparent code reviews, and UI/UX refinement.</p>
+                        <p class="text-sm text-gray-600 mt-2">Iterative sprints with regular updates, transparent code reviews, and UI/UX refinement.</p>
                     </div>
                 </div>
                 <!-- Step 3 -->
                 <div class="flex flex-col md:flex-row items-center justify-between mb-12 relative z-10" data-aos="fade-right">
                     <div class="w-full md:w-5/12 text-center md:text-right order-2 md:order-1">
                         <h3 class="text-xl font-black">3. QA & Launch</h3>
-                        <p class="text-sm text-gray-500 mt-2">Comprehensive stress testing, security audits, and seamless deployment to production.</p>
+                        <p class="text-sm text-gray-600 mt-2">Comprehensive stress testing, security audits, and seamless deployment to production.</p>
                     </div>
                     <div class="w-10 h-10 bg-indigo-600 rounded-full border-4 border-white dark:border-gray-900 flex items-center justify-center text-white font-bold order-1 md:order-2 mb-4 md:mb-0">3</div>
                     <div class="w-full md:w-5/12 order-3"></div>
@@ -473,11 +474,11 @@
                         <img src="https://i.pravatar.cc/100?u=4" alt="John Doe" width="56" height="56" class="w-14 h-14 rounded-full border-2 border-indigo-600">
                         <div>
                             <h4 class="font-bold">John Doe</h4>
-                            <p class="text-xs text-gray-400">United Kingdom</p>
+                            <p class="text-xs text-gray-500">United Kingdom</p>
                         </div>
                     </div>
                     <div class="text-yellow-500 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm italic">"Delivered a complex fintech app ahead of schedule. The code quality and architecture were exceptional. Highly recommended for enterprise work."</p>
+                    <p class="text-gray-700 dark:text-gray-400 text-sm italic">"Delivered a complex fintech app ahead of schedule. The code quality and architecture were exceptional. Highly recommended for enterprise work."</p>
                 </div>
 
                 <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl card-shadow hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
@@ -485,11 +486,11 @@
                         <img src="https://i.pravatar.cc/100?u=5" alt="Sara Al-Faisal" width="56" height="56" class="w-14 h-14 rounded-full border-2 border-indigo-600">
                         <div>
                             <h4 class="font-bold">Sara Al-Faisal</h4>
-                            <p class="text-xs text-gray-400">UAE</p>
+                            <p class="text-xs text-gray-500">UAE</p>
                         </div>
                     </div>
                     <div class="text-yellow-500 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm italic">"Saved our production server from a critical downtime. Their Linux expertise and response time are unmatched in the industry."</p>
+                    <p class="text-gray-700 dark:text-gray-400 text-sm italic">"Saved our production server from a critical downtime. Their Linux expertise and response time are unmatched in the industry."</p>
                 </div>
 
                 <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl card-shadow hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
@@ -497,11 +498,11 @@
                         <img src="https://i.pravatar.cc/100?u=6" alt="Rajesh Kumar" width="56" height="56" class="w-14 h-14 rounded-full border-2 border-indigo-600">
                         <div>
                             <h4 class="font-bold">Rajesh Kumar</h4>
-                            <p class="text-xs text-gray-400">India</p>
+                            <p class="text-xs text-gray-500">India</p>
                         </div>
                     </div>
                     <div class="text-yellow-500 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm italic">"Seamless migration of our legacy e-commerce platform to Laravel. Zero data loss, improved load times, and excellent documentation."</p>
+                    <p class="text-gray-700 dark:text-gray-400 text-sm italic">"Seamless migration of our legacy e-commerce platform to Laravel. Zero data loss, improved load times, and excellent documentation."</p>
                 </div>
             </div>
         </div>
@@ -517,25 +518,26 @@
                         Do I get full ownership of the source code?
                         <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
                     </summary>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-4 leading-relaxed">Yes. You receive full ownership of the source code with clean documentation, allowing your in-house team to take over anytime.</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-4 leading-relaxed">Yes. You receive full ownership of the source code with clean documentation, allowing your in-house team to take over anytime.</p>
                 </details>
                 <details class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm cursor-pointer group" data-aos="fade-up" data-aos-delay="100">
                     <summary class="font-bold flex justify-between items-center">
                         Is there a warranty on the code?
                         <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
                     </summary>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-4 leading-relaxed">We stand by our engineering. If there's a critical bug we can't fix within 7 days, you get a full refund.</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-4 leading-relaxed">We stand by our engineering. If there's a critical bug we can't fix within 7 days, you get a full refund.</p>
                 </details>
                 <details class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm cursor-pointer group" data-aos="fade-up" data-aos-delay="200">
                     <summary class="font-bold flex justify-between items-center">
                         Do you provide post-launch support?
                         <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
                     </summary>
-                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-4 leading-relaxed">Yes, we provide complimentary installation and 6 months of priority bug-fix support with every project.</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mt-4 leading-relaxed">Yes, we provide complimentary installation and 6 months of priority bug-fix support with every project.</p>
                 </details>
             </div>
         </div>
     </section>
+    </main>
 
     <footer id="contact" class="bg-gray-900 text-white py-20 px-6 border-t border-gray-800">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
@@ -544,7 +546,7 @@
                     <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold" aria-hidden="true">S</div>
                     <span class="text-2xl font-black tracking-tight">SilentSudoX</span>
                 </div>
-                <p class="text-gray-400 text-sm leading-relaxed">Enterprise software engineering partner for forward-thinking businesses. We build the technology that powers your growth.</p>
+                <p class="text-gray-400 text-sm leading-relaxed">Enterprise software engineering partner for forward-thinking businesses.</p>
             </div>
             <div>
                 <h4 class="font-bold mb-6">Quick Links</h4>
@@ -606,19 +608,19 @@
     <div id="callback-modal" class="fixed inset-0 z-[150] hidden flex items-center justify-center px-6">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleModal('callback-modal')"></div>
         <div class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-2xl w-full max-w-md relative z-10 scale-95 transition-transform">
-            <button onclick="toggleModal('callback-modal')" aria-label="Close Modal" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 dark:hover:text-white"><i class="fas fa-times"></i></button>
+            <button onclick="toggleModal('callback-modal')" aria-label="Close Modal" class="absolute top-6 right-6 text-gray-500 hover:text-gray-900 dark:hover:text-white"><i class="fas fa-times"></i></button>
             <h3 class="text-2xl font-black mb-6">Request a Callback</h3>
             <form id="callback-form" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Name</label>
+                    <label for="cb-name" class="block text-xs font-bold uppercase text-gray-500 mb-1">Name</label>
                     <input type="text" id="cb-name" required class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 outline-none focus:ring-2 ring-indigo-600">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-gray-400 mb-1">WhatsApp Number</label>
+                    <label for="cb-phone" class="block text-xs font-bold uppercase text-gray-500 mb-1">WhatsApp Number</label>
                     <input type="tel" id="cb-phone" required class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 outline-none focus:ring-2 ring-indigo-600">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Requirement</label>
+                    <label for="cb-req" class="block text-xs font-bold uppercase text-gray-500 mb-1">Requirement</label>
                     <select id="cb-req" class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 outline-none focus:ring-2 ring-indigo-600">
                         <option value="Mobile App">Mobile App Development</option>
                         <option value="Web App">Web Development</option>
@@ -634,7 +636,7 @@
     <div id="product-modal" class="fixed inset-0 z-[150] hidden flex items-center justify-center px-6">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleModal('product-modal')"></div>
         <div class="bg-white dark:bg-gray-800 p-8 rounded-[2.5rem] shadow-2xl w-full max-w-lg relative z-10 overflow-hidden">
-            <button onclick="toggleModal('product-modal')" aria-label="Close Modal" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 dark:hover:text-white z-20"><i class="fas fa-times"></i></button>
+            <button onclick="toggleModal('product-modal')" aria-label="Close Modal" class="absolute top-6 right-6 text-gray-500 hover:text-gray-900 dark:hover:text-white z-20"><i class="fas fa-times"></i></button>
             <div id="product-modal-content">
             </div>
         </div>
@@ -644,16 +646,16 @@
     <div id="license-modal" class="fixed inset-0 z-[160] hidden flex items-center justify-center px-6">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleModal('license-modal')"></div>
         <div class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-2xl w-full max-w-lg relative z-10">
-            <button onclick="toggleModal('license-modal')" aria-label="Close Modal" class="absolute top-6 right-6 text-gray-400"><i class="fas fa-times"></i></button>
+            <button onclick="toggleModal('license-modal')" aria-label="Close Modal" class="absolute top-6 right-6 text-gray-500"><i class="fas fa-times"></i></button>
             <h3 class="text-2xl font-black mb-4">License Types</h3>
             <div class="space-y-4">
                 <div class="border border-gray-200 dark:border-gray-700 p-4 rounded-xl">
                     <h4 class="font-bold text-indigo-600 dark:text-indigo-400">Regular License</h4>
-                    <p class="text-xs text-gray-500 mt-1">Use in a single end product. No redistribution allowed.</p>
+                    <p class="text-xs text-gray-600 mt-1">Use in a single end product. No redistribution allowed.</p>
                 </div>
                 <div class="border border-gray-200 dark:border-gray-700 p-4 rounded-xl">
                     <h4 class="font-bold text-indigo-600 dark:text-indigo-400">Extended License</h4>
-                    <p class="text-xs text-gray-500 mt-1">Use in a single end product which end users can be charged for.</p>
+                    <p class="text-xs text-gray-600 mt-1">Use in a single end product which end users can be charged for.</p>
                 </div>
             </div>
         </div>
@@ -677,11 +679,10 @@
         window.addEventListener('load', () => {
             const loader = document.getElementById('page-loader');
             if (!sessionStorage.getItem('loaded')) {
-                setTimeout(() => {
-                    loader.style.opacity = '0';
-                    loader.style.visibility = 'hidden';
-                    sessionStorage.setItem('loaded', 'true');
-                }, 1500);
+                // Performance: Remove artificial delay to improve LCP
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+                sessionStorage.setItem('loaded', 'true');
             } else {
                 loader.style.display = 'none';
             }
