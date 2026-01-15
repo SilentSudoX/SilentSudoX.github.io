@@ -14,6 +14,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- Security: CSP to prevent XSS while allowing necessary CDNs -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval';">
+    <meta name="theme-color" content="#4f46e5">
+
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
 
     <title>SilentSudoX | Buy Flutter App Source Code & Laravel SaaS Kits</title>
     <meta name="description" content="Top destination to buy ready-made apps in India. Explore our premium Flutter app source code, Laravel SaaS starter kits, and multi-vendor marketplace solutions.">
@@ -191,8 +196,8 @@
     <nav class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-gray-800">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">S</div>
-                <a href="/" class="text-2xl font-black text-gray-900 dark:text-white tracking-tight">Silent<span class="text-indigo-600">SudoX</span></a>
+                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold" aria-hidden="true">S</div>
+                <a href="/" class="text-2xl font-black text-gray-900 dark:text-white tracking-tight" aria-label="SilentSudoX Home">Silent<span class="text-indigo-600 dark:text-indigo-400">SudoX</span></a>
             </div>
             
             <div class="hidden md:flex space-x-8 font-semibold text-sm">
@@ -203,7 +208,7 @@
             </div>
 
             <div class="flex items-center space-x-4">
-                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 transition">
+                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 transition">
                     <i id="theme-toggle-icon" class="fas fa-moon"></i>
                 </button>
                 <a href="#contact" class="hidden sm:block bg-indigo-600 text-white px-6 py-2.5 rounded-full font-bold shadow-lg hover:bg-indigo-700 transition text-sm">Hire Us</a>
@@ -215,7 +220,7 @@
         <div class="flex flex-col md:flex-row items-center gap-16">
             <div class="w-full md:w-1/2" data-aos="fade-right">
                 <h1 class="text-4xl md:text-6xl font-black text-gray-900 dark:text-white leading-tight mb-6">
-                    Premium <span class="text-indigo-600">Flutter App Source Code</span> & SaaS Kits
+                    Premium <span class="text-indigo-600 dark:text-indigo-400">Flutter App Source Code</span> & SaaS Kits
                 </h1>
                 <p class="text-gray-500 dark:text-gray-400 text-lg md:text-xl leading-relaxed mb-8">
                     Launch your startup instantly with our <strong>Laravel SaaS Starter Kits</strong> and <strong>Multi-Vendor App Source Code</strong>. Trusted by developers for high-quality, ready-made apps in India and globally.
@@ -223,11 +228,11 @@
                 
                 <div class="flex flex-wrap gap-4 mb-10">
                     <div class="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-2xl border border-indigo-100 dark:border-indigo-800 text-center min-w-[120px]">
-                        <p class="text-2xl font-black text-indigo-600">500+</p>
+                        <p class="text-2xl font-black text-indigo-600 dark:text-indigo-400">500+</p>
                         <p class="text-[10px] uppercase font-black text-gray-400">Enterprise Deployments</p>
                     </div>
                     <div class="bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-2xl border border-indigo-100 dark:border-indigo-800 text-center min-w-[120px]">
-                        <p class="text-2xl font-black text-indigo-600">2,000+</p>
+                        <p class="text-2xl font-black text-indigo-600 dark:text-indigo-400">2,000+</p>
                         <p class="text-[10px] uppercase font-black text-gray-400">Active Licenses</p>
                     </div>
                 </div>
@@ -242,11 +247,11 @@
             <div class="w-full md:w-1/2" data-aos="fade-left">
                 <div class="relative">
                     <!-- Performance: Eager loading for LCP -->
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Team" loading="eager" class="rounded-[3rem] shadow-2xl w-full h-[350px] md:h-[500px] object-cover">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="SilentSudoX Engineering Team" width="800" height="500" fetchpriority="high" loading="eager" class="rounded-[3rem] shadow-2xl w-full h-[350px] md:h-[500px] object-cover">
                     <div class="absolute -bottom-8 left-4 md:-left-8 bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-2xl border border-gray-50 dark:border-gray-700 flex items-center space-x-4 max-w-[90%]">
                         <div class="flex -space-x-3">
-                            <img src="https://i.pravatar.cc/100?u=1" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800">
-                            <img src="https://i.pravatar.cc/100?u=2" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800">
+                            <img src="https://i.pravatar.cc/100?u=1" alt="Partner Avatar 1" width="40" height="40" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800">
+                            <img src="https://i.pravatar.cc/100?u=2" alt="Partner Avatar 2" width="40" height="40" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800">
                         </div>
                         <div>
                             <p class="text-sm font-black text-gray-900 dark:text-white">2,000+ Partners</p>
@@ -298,22 +303,22 @@
             <!-- Trust Badges -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-12">
                 <div class="p-4 hover:-translate-y-1 transition duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 text-2xl"><i class="fas fa-shield-alt"></i></div>
+                    <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 dark:text-indigo-400 text-2xl"><i class="fas fa-shield-alt"></i></div>
                     <h4 class="font-bold">Secure Transactions</h4>
                     <p class="text-xs text-gray-500 mt-1">Encrypted & Protected</p>
                 </div>
                 <div class="p-4 hover:-translate-y-1 transition duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 text-2xl"><i class="fas fa-code"></i></div>
+                    <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 dark:text-indigo-400 text-2xl"><i class="fas fa-code"></i></div>
                     <h4 class="font-bold">100% IP Ownership</h4>
                     <p class="text-xs text-gray-500 mt-1">Complete Asset Transfer</p>
                 </div>
                 <div class="p-4 hover:-translate-y-1 transition duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 text-2xl"><i class="fas fa-headset"></i></div>
+                    <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 dark:text-indigo-400 text-2xl"><i class="fas fa-headset"></i></div>
                     <h4 class="font-bold">Extended Warranty</h4>
                     <p class="text-xs text-gray-500 mt-1">Technical Assurance</p>
                 </div>
                 <div class="p-4 hover:-translate-y-1 transition duration-300">
-                    <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 text-2xl"><i class="fas fa-globe"></i></div>
+                    <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 dark:text-indigo-400 text-2xl"><i class="fas fa-globe"></i></div>
                     <h4 class="font-bold">Global Support</h4>
                     <p class="text-xs text-gray-500 mt-1">Serving 12+ Markets</p>
                 </div>
@@ -322,7 +327,7 @@
             <!-- Animated Counters -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-gray-200 dark:border-gray-700 pt-12">
                 <div class="flex flex-col items-center p-6 rounded-3xl bg-white dark:bg-gray-800 shadow-lg border border-gray-100 dark:border-gray-700 hover:-translate-y-1 transition-transform duration-300" data-aos="zoom-in">
-                    <div class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-sm">
+                    <div class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-sm">
                         <i class="fas fa-calendar-check"></i>
                     </div>
                     <div class="text-center">
@@ -331,7 +336,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col items-center p-6 rounded-3xl bg-white dark:bg-gray-800 shadow-lg border border-gray-100 dark:border-gray-700 hover:-translate-y-1 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-sm">
+                    <div class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-sm">
                         <i class="fas fa-project-diagram"></i>
                     </div>
                     <div class="text-center">
@@ -340,7 +345,7 @@
                     </div>
                 </div>
                 <div class="flex flex-col items-center p-6 rounded-3xl bg-white dark:bg-gray-800 shadow-lg border border-gray-100 dark:border-gray-700 hover:-translate-y-1 transition-transform duration-300" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-sm">
+                    <div class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center text-2xl mb-4 shadow-sm">
                         <i class="fas fa-globe-americas"></i>
                     </div>
                     <div class="text-center">
@@ -363,14 +368,14 @@
                 <div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
                     <div class="w-full md:w-1/3 text-center">
                         <div class="w-40 h-40 mx-auto bg-white p-2 rounded-full mb-6">
-                            <img src="https://i.pravatar.cc/300?u=SilentSudoX" alt="SilentSudoX - Founder" class="w-full h-full rounded-full object-cover">
+                            <img src="https://i.pravatar.cc/300?u=SilentSudoX" alt="SilentSudoX - Founder" width="300" height="300" class="w-full h-full rounded-full object-cover">
                         </div>
                         <h3 class="text-2xl font-black">SilentSudoX</h3>
                         <p class="text-indigo-200 font-medium">Principal Solutions Architect</p>
                         <div class="flex justify-center gap-4 mt-4">
-                            <a href="#" class="text-white hover:text-indigo-300 transition"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-white hover:text-indigo-300 transition"><i class="fab fa-github text-xl"></i></a>
-                            <a href="#" class="text-white hover:text-indigo-300 transition"><i class="fab fa-twitter text-xl"></i></a>
+                            <a href="#" aria-label="LinkedIn" class="text-white hover:text-indigo-300 transition"><i class="fab fa-linkedin text-xl"></i></a>
+                            <a href="#" aria-label="GitHub" class="text-white hover:text-indigo-300 transition"><i class="fab fa-github text-xl"></i></a>
+                            <a href="#" aria-label="Twitter" class="text-white hover:text-indigo-300 transition"><i class="fab fa-twitter text-xl"></i></a>
                         </div>
                     </div>
                     <div class="w-full md:w-2/3">
@@ -465,7 +470,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl card-shadow hover:-translate-y-2 transition duration-300" data-aos="fade-up">
                     <div class="flex items-center space-x-4 mb-6">
-                        <img src="https://i.pravatar.cc/100?u=4" class="w-14 h-14 rounded-full border-2 border-indigo-600">
+                        <img src="https://i.pravatar.cc/100?u=4" alt="John Doe" width="56" height="56" class="w-14 h-14 rounded-full border-2 border-indigo-600">
                         <div>
                             <h4 class="font-bold">John Doe</h4>
                             <p class="text-xs text-gray-400">United Kingdom</p>
@@ -477,7 +482,7 @@
 
                 <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl card-shadow hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center space-x-4 mb-6">
-                        <img src="https://i.pravatar.cc/100?u=5" class="w-14 h-14 rounded-full border-2 border-indigo-600">
+                        <img src="https://i.pravatar.cc/100?u=5" alt="Sara Al-Faisal" width="56" height="56" class="w-14 h-14 rounded-full border-2 border-indigo-600">
                         <div>
                             <h4 class="font-bold">Sara Al-Faisal</h4>
                             <p class="text-xs text-gray-400">UAE</p>
@@ -489,7 +494,7 @@
 
                 <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl card-shadow hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center space-x-4 mb-6">
-                        <img src="https://i.pravatar.cc/100?u=6" class="w-14 h-14 rounded-full border-2 border-indigo-600">
+                        <img src="https://i.pravatar.cc/100?u=6" alt="Rajesh Kumar" width="56" height="56" class="w-14 h-14 rounded-full border-2 border-indigo-600">
                         <div>
                             <h4 class="font-bold">Rajesh Kumar</h4>
                             <p class="text-xs text-gray-400">India</p>
@@ -536,7 +541,7 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
             <div>
                 <div class="flex items-center justify-center md:justify-start space-x-2 mb-6">
-                    <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">S</div>
+                    <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold" aria-hidden="true">S</div>
                     <span class="text-2xl font-black tracking-tight">SilentSudoX</span>
                 </div>
                 <p class="text-gray-400 text-sm leading-relaxed">Enterprise software engineering partner for forward-thinking businesses. We build the technology that powers your growth.</p>
@@ -553,16 +558,16 @@
             <div>
                 <h4 class="font-bold mb-6">Connect</h4>
                 <div class="flex justify-center md:justify-start space-x-6 text-xl">
-                    <a href="#" class="hover:text-indigo-600 transition"><i class="fab fa-github"></i></a>
-                    <a href="#" class="hover:text-indigo-600 transition"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="hover:text-indigo-600 transition"><i class="fab fa-telegram"></i></a>
-                    <a href="#" class="hover:text-indigo-600 transition"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="GitHub" class="hover:text-indigo-600 transition"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="hover:text-indigo-600 transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Telegram" class="hover:text-indigo-600 transition"><i class="fab fa-telegram"></i></a>
+                    <a href="#" aria-label="WhatsApp" class="hover:text-indigo-600 transition"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div>
                 <h4 class="font-bold mb-6">Newsletter</h4>
                 <form class="flex space-x-2">
-                    <input type="email" placeholder="Email" class="bg-gray-800 border-none rounded-lg px-4 py-2 w-full text-sm outline-none focus:ring-1 ring-indigo-600">
+                    <input type="email" placeholder="Email" aria-label="Email Address" class="bg-gray-800 border-none rounded-lg px-4 py-2 w-full text-sm outline-none focus:ring-1 ring-indigo-600">
                     <button class="bg-indigo-600 px-4 py-2 rounded-lg text-sm font-bold">Join</button>
                 </form>
             </div>
@@ -580,18 +585,18 @@
 
     <div class="fixed bottom-6 right-6 z-[100] group">
         <div id="quick-links" class="flex flex-col-reverse items-center space-y-reverse space-y-3 mb-3 hidden scale-0 origin-bottom transition-transform duration-300">
-            <a href="tel:+91XXXXXXXXXX" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center shadow-xl rotate-hover"><i class="fas fa-phone"></i></a>
-            <a href="mailto:info@silentsudox.com" class="w-12 h-12 bg-red-500 text-white rounded-full flex items-center justify-center shadow-xl rotate-hover"><i class="fas fa-envelope"></i></a>
-            <a href="https://t.me/silentsudox" class="w-12 h-12 bg-sky-500 text-white rounded-full flex items-center justify-center shadow-xl rotate-hover"><i class="fab fa-telegram-plane"></i></a>
-            <a href="https://wa.me/91XXXXXXXXXX" class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-xl rotate-hover"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+91XXXXXXXXXX" aria-label="Call Us" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center shadow-xl rotate-hover"><i class="fas fa-phone"></i></a>
+            <a href="mailto:info@silentsudox.com" aria-label="Email Us" class="w-12 h-12 bg-red-500 text-white rounded-full flex items-center justify-center shadow-xl rotate-hover"><i class="fas fa-envelope"></i></a>
+            <a href="https://t.me/silentsudox" aria-label="Telegram" class="w-12 h-12 bg-sky-500 text-white rounded-full flex items-center justify-center shadow-xl rotate-hover"><i class="fab fa-telegram-plane"></i></a>
+            <a href="https://wa.me/91XXXXXXXXXX" aria-label="WhatsApp" class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center shadow-xl rotate-hover"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <button id="quick-action-btn" class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center shadow-2xl transition hover:rotate-12">
+        <button id="quick-action-btn" aria-label="Quick Actions" class="w-16 h-16 bg-indigo-600 text-white rounded-full flex items-center justify-center shadow-2xl transition hover:rotate-12">
             <i id="quick-icon" class="fas fa-plus text-2xl"></i>
         </button>
     </div>
 
     <!-- Feature: Back to Top Button -->
-    <button id="back-to-top" onclick="window.scrollTo(0,0)" class="fixed bottom-24 right-6 z-40 w-10 h-10 bg-gray-800 dark:bg-white text-white dark:text-gray-900 rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition hover:bg-indigo-600 dark:hover:bg-indigo-600 dark:hover:text-white">
+    <button id="back-to-top" aria-label="Back to Top" onclick="window.scrollTo(0,0)" class="fixed bottom-24 right-6 z-40 w-10 h-10 bg-gray-800 dark:bg-white text-white dark:text-gray-900 rounded-full shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition hover:bg-indigo-600 dark:hover:bg-indigo-600 dark:hover:text-white">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -601,7 +606,7 @@
     <div id="callback-modal" class="fixed inset-0 z-[150] hidden flex items-center justify-center px-6">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleModal('callback-modal')"></div>
         <div class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-2xl w-full max-w-md relative z-10 scale-95 transition-transform">
-            <button onclick="toggleModal('callback-modal')" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 dark:hover:text-white"><i class="fas fa-times"></i></button>
+            <button onclick="toggleModal('callback-modal')" aria-label="Close Modal" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 dark:hover:text-white"><i class="fas fa-times"></i></button>
             <h3 class="text-2xl font-black mb-6">Request a Callback</h3>
             <form id="callback-form" class="space-y-4">
                 <div>
@@ -629,7 +634,7 @@
     <div id="product-modal" class="fixed inset-0 z-[150] hidden flex items-center justify-center px-6">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleModal('product-modal')"></div>
         <div class="bg-white dark:bg-gray-800 p-8 rounded-[2.5rem] shadow-2xl w-full max-w-lg relative z-10 overflow-hidden">
-            <button onclick="toggleModal('product-modal')" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 dark:hover:text-white z-20"><i class="fas fa-times"></i></button>
+            <button onclick="toggleModal('product-modal')" aria-label="Close Modal" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 dark:hover:text-white z-20"><i class="fas fa-times"></i></button>
             <div id="product-modal-content">
             </div>
         </div>
@@ -639,15 +644,15 @@
     <div id="license-modal" class="fixed inset-0 z-[160] hidden flex items-center justify-center px-6">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleModal('license-modal')"></div>
         <div class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-2xl w-full max-w-lg relative z-10">
-            <button onclick="toggleModal('license-modal')" class="absolute top-6 right-6 text-gray-400"><i class="fas fa-times"></i></button>
+            <button onclick="toggleModal('license-modal')" aria-label="Close Modal" class="absolute top-6 right-6 text-gray-400"><i class="fas fa-times"></i></button>
             <h3 class="text-2xl font-black mb-4">License Types</h3>
             <div class="space-y-4">
                 <div class="border border-gray-200 dark:border-gray-700 p-4 rounded-xl">
-                    <h4 class="font-bold text-indigo-600">Regular License</h4>
+                    <h4 class="font-bold text-indigo-600 dark:text-indigo-400">Regular License</h4>
                     <p class="text-xs text-gray-500 mt-1">Use in a single end product. No redistribution allowed.</p>
                 </div>
                 <div class="border border-gray-200 dark:border-gray-700 p-4 rounded-xl">
-                    <h4 class="font-bold text-indigo-600">Extended License</h4>
+                    <h4 class="font-bold text-indigo-600 dark:text-indigo-400">Extended License</h4>
                     <p class="text-xs text-gray-500 mt-1">Use in a single end product which end users can be charged for.</p>
                 </div>
             </div>
@@ -656,8 +661,8 @@
 
     <!-- Feature: Image Lightbox -->
     <div id="lightbox" class="fixed inset-0 z-[300] bg-black/90 hidden flex items-center justify-center p-4 opacity-0 pointer-events-none" onclick="closeLightbox()">
-        <button class="absolute top-6 right-6 text-white text-2xl hover:text-gray-300"><i class="fas fa-times"></i></button>
-        <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
+        <button class="absolute top-6 right-6 text-white text-2xl hover:text-gray-300" aria-label="Close Lightbox"><i class="fas fa-times"></i></button>
+        <img id="lightbox-img" src="" alt="Lightbox Preview" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
     </div>
 
     <!-- Feature: Hover Sound Audio (Subtle Click) -->
