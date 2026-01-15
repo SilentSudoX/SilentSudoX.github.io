@@ -406,7 +406,11 @@
     </div>
 
     <script>
-        AOS.init({ duration: 800, once: true });
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 800, once: true });
+            }
+        });
 
         // Dark Mode
         const themeToggleBtn = document.getElementById('theme-toggle');
