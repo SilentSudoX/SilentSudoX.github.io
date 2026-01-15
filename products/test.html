@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4XT2JGWVQC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4XT2JGWVQC');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>Multi-Vendor Marketplace Platform (Enterprise Edition) | SilentSudoX</title>
+    <meta name="description" content="Acquire the source code for a scalable, white-label marketplace solution. Features a native Flutter mobile app and a robust Laravel backend.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        indigo: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body, html { overflow-x: hidden; width: 100%; }
+        .card-shadow { box-shadow: 0 10px 40px rgba(0,0,0,0.04); }
+        .dark .card-shadow { box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">S</div>
+                <a href="index.html" class="text-2xl font-black text-gray-900 dark:text-white tracking-tight">Silent<span class="text-indigo-600">SudoX</span></a>
+            </div>
+            <div class="hidden md:flex space-x-8 font-semibold text-sm">
+                <a href="index.html" class="nav-link hover:text-indigo-600 transition">Home</a>
+                <a href="index.html#services" class="nav-link hover:text-indigo-600 transition">Services</a>
+                <a href="source.html" class="nav-link hover:text-indigo-600 transition">Solutions Marketplace</a>
+                <button onclick="toggleModal('callback-modal')" class="hover:text-indigo-600 transition">Callback</button>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 transition">
+                    <i id="theme-toggle-icon" class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Header -->
+    <header class="pt-16 pb-12 px-6 bg-gray-50 dark:bg-gray-800/30 border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="w-full md:w-2/3">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">v2.4.0 Stable</span>
+                        <span class="text-gray-400 text-xs"><i class="fas fa-clock mr-1"></i> Updated 2 days ago</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-4">Multi-Vendor Marketplace Platform (Enterprise Edition)</h1>
+                    <p class="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
+                        A scalable, white-label marketplace solution designed for high-volume transactions. Features a native Flutter mobile app and a robust Laravel backend. Engineered for high scalability and security.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#demo" class="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-6 py-3 rounded-xl font-bold hover:bg-gray-50 dark:hover:bg-gray-600 transition"><i class="fas fa-eye mr-2"></i> Live Demo</a>
+                        <a href="#docs" class="bg-transparent text-indigo-600 px-6 py-3 rounded-xl font-bold hover:underline">View Documentation</a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 bg-white dark:bg-gray-800 p-6 rounded-2xl card-shadow border border-gray-100 dark:border-gray-700">
+                    <div class="flex justify-between items-end mb-4">
+                        <div>
+                            <p class="text-sm text-gray-400 font-bold uppercase">Starting From</p>
+                            <h2 class="text-4xl font-black text-indigo-600">$49</h2>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-xs text-green-500 font-bold">One-time payment</p>
+                        </div>
+                    </div>
+                    <a href="#pricing" class="block w-full bg-indigo-600 text-white py-4 rounded-xl font-bold shadow-lg hover:bg-indigo-700 transition mb-4 text-center">View Pricing Plans</a>
+                    <p class="text-xs text-center text-gray-400"><i class="fas fa-shield-alt mr-1"></i> Secure Payment via Stripe/PayPal</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
+        
+        <!-- Left Column (Details) -->
+        <div class="lg:col-span-2 space-y-16">
+            
+            <!-- Overview -->
+            <section>
+                <h3 class="text-2xl font-black mb-6">Product Overview</h3>
+                <div class="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
+                    <p>
+                        This source code package delivers a fully functional, production-ready Multi-Vendor Marketplace solution. It combines a high-performance Flutter mobile application with a robust Laravel backend, designed to scale from day one.
+                    </p>
+                    
+                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mt-6 mb-3">The Problem</h4>
+                    <p class="mb-4">
+                        Building a marketplace from scratch is resource-intensive, often requiring 1000+ hours of development for backend architecture, API development, mobile UI/UX, and payment integration. Startups often burn through their runway before reaching the market.
+                    </p>
+
+                    <h4 class="text-lg font-bold text-gray-900 dark:text-white mt-6 mb-3">The Solution</h4>
+                    <p>
+                        Our solution provides a robust foundation that is 90% ready for launch. The backend is built on <strong>Laravel 10</strong>, following Domain-Driven Design (DDD) principles to ensure maintainability. The mobile app uses <strong>Flutter 3.x</strong>, providing a native experience on both iOS and Android from a single codebase.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Who This Is For Section -->
+            <section>
+                <h3 class="text-2xl font-black mb-6">Is This Solution Right For You?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- For You -->
+                    <div class="bg-green-50 dark:bg-green-900/10 p-6 rounded-2xl border border-green-100 dark:border-green-900/30">
+                        <h4 class="font-bold text-green-800 dark:text-green-400 mb-4 flex items-center gap-2">
+                            <i class="fas fa-check-circle"></i> Who This Is For
+                        </h4>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1.5 w-1.5 h-1.5 bg-green-500 rounded-full flex-shrink-0"></span>
+                                <span><strong>Startup Founders:</strong> Launch your MVP in days, not months. Save 90% on initial development costs.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1.5 w-1.5 h-1.5 bg-green-500 rounded-full flex-shrink-0"></span>
+                                <span><strong>Software Agencies:</strong> Deliver high-quality projects to clients faster by using our code as a robust foundation.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1.5 w-1.5 h-1.5 bg-green-500 rounded-full flex-shrink-0"></span>
+                                <span><strong>Developers:</strong> Skip the boring boilerplate setup. Focus on customizing unique features and business logic.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Not For You -->
+                    <div class="bg-red-50 dark:bg-red-900/10 p-6 rounded-2xl border border-red-100 dark:border-red-900/30">
+                        <h4 class="font-bold text-red-800 dark:text-red-400 mb-4 flex items-center gap-2">
+                            <i class="fas fa-times-circle"></i> Who This Is NOT For
+                        </h4>
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1.5 w-1.5 h-1.5 bg-red-500 rounded-full flex-shrink-0"></span>
+                                <span><strong>Zero-Tech Individuals:</strong> If you have no technical knowledge and no budget to hire a developer for setup, this is not for you.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1.5 w-1.5 h-1.5 bg-red-500 rounded-full flex-shrink-0"></span>
+                                <span><strong>Resellers:</strong> Our license strictly prohibits reselling the source code "as-is" on other marketplaces.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1.5 w-1.5 h-1.5 bg-red-500 rounded-full flex-shrink-0"></span>
+                                <span><strong>"Get Rich Quick" Seekers:</strong> This is a professional software tool, not a magic money-making button. It requires business effort to succeed.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Features -->
+            <section>
+                <h3 class="text-2xl font-black mb-8">Key Features</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-wallet"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">Multi-Currency Payment Gateway</h4>
+                            <p class="text-sm text-gray-500 mt-1">Integrated Stripe, PayPal, and Razorpay. Supports multi-currency transactions.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-chart-line"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">Advanced Vendor Intelligence</h4>
+                            <p class="text-sm text-gray-500 mt-1">Detailed dashboards for vendors to track sales, earnings, and product performance.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-language"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">Global Localization Support</h4>
+                            <p class="text-sm text-gray-500 mt-1">Full localization support including Arabic (RTL) and dynamic string translation.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-bell"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">Real-Time Engagement Engine</h4>
+                            <p class="text-sm text-gray-500 mt-1">Firebase integration for order updates, promotional offers, and chat messages.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-red-100 text-red-600 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">Role-Based Access Control</h4>
+                            <p class="text-sm text-gray-500 mt-1">Granular permissions for Super Admin, Sub-Admin, Vendors, and Delivery Staff.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center flex-shrink-0"><i class="fas fa-shipping-fast"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">Logistics Management</h4>
+                            <p class="text-sm text-gray-500 mt-1">Built-in delivery management system with order tracking and rider assignment.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack -->
+            <section>
+                <h3 class="text-2xl font-black mb-6">Technology Stack</h3>
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-100 dark:border-gray-700">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                        <div>
+                            <i class="fab fa-laravel text-3xl text-red-600 mb-2"></i>
+                            <p class="font-bold text-sm">Laravel 10.x</p>
+                            <p class="text-xs text-gray-500">Backend API</p>
+                        </div>
+                        <div>
+                            <i class="fab fa-android text-3xl text-green-500 mb-2"></i>
+                            <p class="font-bold text-sm">Flutter 3.19</p>
+                            <p class="text-xs text-gray-500">Mobile App</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-database text-3xl text-blue-500 mb-2"></i>
+                            <p class="font-bold text-sm">MySQL 8.0</p>
+                            <p class="text-xs text-gray-500">Database</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-bolt text-3xl text-yellow-500 mb-2"></i>
+                            <p class="font-bold text-sm">Redis</p>
+                            <p class="text-xs text-gray-500">Caching</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Screenshots -->
+            <section>
+                <h3 class="text-2xl font-black mb-6">App Screenshots</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="aspect-[9/16] bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center text-gray-400 text-xs">Home Screen</div>
+                    <div class="aspect-[9/16] bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center text-gray-400 text-xs">Product Details</div>
+                    <div class="aspect-[9/16] bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center text-gray-400 text-xs">Cart & Checkout</div>
+                    <div class="aspect-[9/16] bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center text-gray-400 text-xs">User Profile</div>
+                </div>
+            </section>
+
+            <!-- Installation -->
+            <section>
+                <h3 class="text-2xl font-black mb-6">Installation & Requirements</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                        <div>
+                            <h4 class="font-bold">Server Requirements</h4>
+                            <p class="text-sm text-gray-500 mt-1">PHP >= 8.1, BCMath, Ctype, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                        <div>
+                            <h4 class="font-bold">Automated Deployment</h4>
+                            <p class="text-sm text-gray-500 mt-1">Upload the files to your server, configure the <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">.env</code> file with your database credentials, and run the included installer script for rapid setup.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                        <div>
+                            <h4 class="font-bold">Mobile App Build</h4>
+                            <p class="text-sm text-gray-500 mt-1">Open the Flutter project in VS Code or Android Studio. Run <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">flutter pub get</code> and <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded">flutter build apk</code> to generate the application binary.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Right Column (Sticky Sidebar) -->
+        <div class="lg:col-span-1">
+            <div class="sticky top-24 space-y-8">
+                
+                <!-- What You Get -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl border border-gray-100 dark:border-gray-700">
+                    <h4 class="font-bold mb-4 uppercase text-xs text-gray-400 tracking-widest">What's Included</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Full Source Code (Flutter + Laravel)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Project Documentation PDF</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>SQL Database File</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Figma Design Assets</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>6 Months Priority Support</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- License Terms -->
+                <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-2xl">
+                    <h4 class="font-bold mb-4 uppercase text-xs text-gray-400 tracking-widest">License Terms</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-bold text-sm text-indigo-600">Regular License</p>
+                            <p class="text-xs text-gray-500">Use in a single end product. End users cannot be charged for the product itself.</p>
+                        </div>
+                        <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+                            <p class="font-bold text-sm text-indigo-600">Extended License</p>
+                            <p class="text-xs text-gray-500">Use in a single end product which end users can be charged for (e.g., SaaS).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support & Refund -->
+                <div class="text-center">
+                    <p class="text-xs text-gray-400 mb-2">Questions before buying?</p>
+                    <a href="https://wa.me/91XXXXXXXXXX" class="text-indigo-600 font-bold text-sm hover:underline"><i class="fab fa-whatsapp mr-1"></i> Contact Sales Engineering</a>
+                    
+                    <div class="mt-6 text-xs text-gray-500 text-left bg-yellow-50 dark:bg-yellow-900/10 p-4 rounded-xl border border-yellow-100 dark:border-yellow-900/30">
+                        <p class="font-bold mb-1"><i class="fas fa-info-circle mr-1"></i> Refund Policy</p>
+                        We offer a full refund if the product has a critical technical error that our support team cannot resolve within 7 days.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black mb-4">Transparent Pricing</h2>
+                <p class="text-gray-500 dark:text-gray-400 text-lg">One-time payment. Full source code ownership. No monthly fees.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter Plan -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 flex flex-col hover:border-indigo-300 transition duration-300">
+                    <div class="mb-4">
+                        <span class="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Starter</span>
+                    </div>
+                    <h3 class="text-4xl font-black text-gray-900 dark:text-white mb-2">$49</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Perfect for students and learning purposes.</p>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span><strong>Personal Use</strong> Only</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span>Full Source Code</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span>1 Month Support</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-gray-400">
+                            <i class="fas fa-times mt-1"></i>
+                            <span>No Commercial Rights</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white py-4 rounded-xl font-bold hover:bg-gray-200 dark:hover:bg-gray-600 transition">Choose Starter</button>
+                </div>
+
+                <!-- Business Plan -->
+                <div class="bg-indigo-600 rounded-3xl p-8 border border-indigo-500 flex flex-col relative transform md:-translate-y-4 shadow-2xl">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-indigo-900 text-[10px] font-bold px-4 py-1 rounded-b-lg uppercase tracking-widest">Most Popular</div>
+                    <div class="mb-4 mt-2">
+                        <span class="bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Business</span>
+                    </div>
+                    <h3 class="text-4xl font-black text-white mb-2">$149</h3>
+                    <p class="text-sm text-indigo-100 mb-6">For founders launching a real product.</p>
+                    
+                    <ul class="space-y-4 mb-8 flex-1 text-white">
+                        <li class="flex items-start gap-3 text-sm">
+                            <i class="fas fa-check text-yellow-400 mt-1"></i>
+                            <span><strong>Commercial License</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i class="fas fa-check text-yellow-400 mt-1"></i>
+                            <span>Publish to App Stores</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i class="fas fa-check text-yellow-400 mt-1"></i>
+                            <span>6 Months Priority Support</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i class="fas fa-check text-yellow-400 mt-1"></i>
+                            <span>Installation Assistance</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-white text-indigo-600 py-4 rounded-xl font-bold hover:bg-indigo-50 transition shadow-lg">Get Business License</button>
+                </div>
+
+                <!-- SaaS Plan -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 border border-gray-200 dark:border-gray-700 flex flex-col hover:border-indigo-300 transition duration-300">
+                    <div class="mb-4">
+                        <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">SaaS / Agency</span>
+                    </div>
+                    <h3 class="text-4xl font-black text-gray-900 dark:text-white mb-2">$499</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">For scaling startups and agencies.</p>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span><strong>Extended License</strong> (Charge Users)</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span>Unlimited Projects (Agency)</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span>12 Months Dedicated Support</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i class="fas fa-check text-green-500 mt-1"></i>
+                            <span>Free Server Setup & White-label</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white py-4 rounded-xl font-bold hover:bg-gray-200 dark:hover:bg-gray-600 transition">Purchase Extended</button>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-sm text-gray-500 dark:text-gray-400">Need a custom license for enterprise? <a href="#" onclick="toggleModal('callback-modal')" class="text-indigo-600 font-bold hover:underline">Contact Sales</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-sm">
+            <div>
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="w-6 h-6 bg-indigo-600 rounded flex items-center justify-center text-white font-bold text-xs">S</div>
+                    <span class="text-lg font-black tracking-tight">SilentSudoX</span>
+                </div>
+                <p class="text-gray-400">Premium software engineering partner for forward-thinking businesses.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Legal</h4>
+                <ul class="text-gray-400 space-y-2">
+                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-white">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Connect</h4>
+                <div class="flex space-x-4 text-lg">
+                    <a href="#" class="hover:text-indigo-400"><i class="fab fa-github"></i></a>
+                    <a href="#" class="hover:text-indigo-400"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-indigo-400"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div>
+                <p class="text-gray-500">&copy; 2026 SilentSudoX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Callback Modal -->
+    <div id="callback-modal" class="fixed inset-0 z-[150] hidden flex items-center justify-center px-6">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleModal('callback-modal')"></div>
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-2xl w-full max-w-md relative z-10 scale-95 transition-transform">
+            <button onclick="toggleModal('callback-modal')" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 dark:hover:text-white"><i class="fas fa-times"></i></button>
+            <h3 class="text-2xl font-black mb-6">Request a Callback</h3>
+            <form id="callback-form" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Name</label>
+                    <input type="text" id="cb-name" required class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 outline-none focus:ring-2 ring-indigo-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-400 mb-1">WhatsApp Number</label>
+                    <input type="tel" id="cb-phone" required class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 outline-none focus:ring-2 ring-indigo-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-400 mb-1">Requirement</label>
+                    <select id="cb-req" class="w-full bg-gray-50 dark:bg-gray-900 border-none rounded-xl px-4 py-3 outline-none focus:ring-2 ring-indigo-600">
+                        <option value="Mobile App">Mobile App Development</option>
+                        <option value="Web App">Web Development</option>
+                        <option value="Source Code">Buying Source Code</option>
+                        <option value="Server Support">Server/VPS Support</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold shadow-xl hover:bg-indigo-700 transition">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Dark Mode Logic (Consistent with other pages)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleIcon = document.getElementById('theme-toggle-icon');
+        const htmlElement = document.documentElement;
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+            themeToggleIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                themeToggleIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.theme = 'light';
+            } else {
+                htmlElement.classList.add('dark');
+                themeToggleIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.theme = 'dark';
+            }
+        });
+
+        // Callback Form
+        function toggleModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.toggle('hidden');
+        }
+
+        document.getElementById('callback-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('cb-name').value;
+            const phone = document.getElementById('cb-phone').value;
+            const req = document.getElementById('cb-req').value;
+            const msg = `Hello SilentSudoX, I am ${name}. I need help with ${req}. Please call me back at ${phone}.`;
+            window.open(`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(msg)}`);
+            toggleModal('callback-modal');
+            alert('Request sent successfully!');
+        });
+    </script>
+</body>
+</html>
