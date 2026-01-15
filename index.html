@@ -635,18 +635,6 @@
         </div>
     </div>
 
-    <!-- Feature: Exit Intent Modal (Desktop Only) -->
-    <div id="exit-modal" class="fixed inset-0 z-[200] hidden flex items-center justify-center px-6">
-        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeExitModal()"></div>
-        <div class="bg-white dark:bg-gray-800 p-8 rounded-[2rem] shadow-2xl w-full max-w-md relative z-10 text-center">
-            <button onclick="closeExitModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 dark:hover:text-white"><i class="fas fa-times"></i></button>
-            <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-4 text-indigo-600 text-2xl">🎁</div>
-            <h3 class="text-2xl font-black mb-2">Accelerate Your Go-To-Market</h3>
-            <p class="text-gray-500 dark:text-gray-400 mb-6">Receive a <span class="text-indigo-600 font-bold">10% Enterprise Discount</span> on your first license. Code: <span class="font-mono bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">STARTUP10</span></p>
-            <button onclick="closeExitModal()" class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold shadow-lg hover:bg-indigo-700 transition">Apply Discount</button>
-        </div>
-    </div>
-
     <!-- Feature: License Info Modal -->
     <div id="license-modal" class="fixed inset-0 z-[160] hidden flex items-center justify-center px-6">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleModal('license-modal')"></div>
@@ -955,21 +943,6 @@
                 <p class="text-[10px] text-center text-gray-400 mt-1"><i class="fas fa-lock"></i> Secure Transaction • No hidden fees</p>
             `;
             toggleModal('product-modal');
-        }
-
-        // Feature: Exit Intent Logic
-        let exitIntentShown = false;
-        const exitModal = document.getElementById('exit-modal');
-        
-        document.addEventListener('mouseleave', (e) => {
-            if (e.clientY < 0 && !exitIntentShown && window.innerWidth > 768) {
-                exitModal.classList.remove('hidden');
-                exitIntentShown = true;
-            }
-        });
-
-        function closeExitModal() {
-            exitModal.classList.add('hidden');
         }
 
         // Feature: Smart WhatsApp Message
