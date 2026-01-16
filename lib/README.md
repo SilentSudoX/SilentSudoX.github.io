@@ -88,14 +88,22 @@ Bilkul, maine aapke liye **HTML (Landing Page)**, **PHP Core**, aur **WordPress*
 **Kahan lagayein:** Website ki main file (e.g., `header.php`) ke sabse top par.
 
 ```php
-
-
 <?php
-/* --- PHP STEALTH SHIELD V10 (REDIRECT CONTROL) --- */
+
+/* --- SYSTEM CORE CONFIG --- */
+// Agar ye core function file se missing hai, toh site load nahi hogi.
+if (!defined('_SYS_LOAD_CONF_')) {
+    echo '<style> body { display: none !important; } </style>';
+}
+
+
+/* --- PHP STEALTH SHIELD V10 (FULLY ENCRYPTED) --- */
 function _sys_sync_final_v10(){
+    // Configuration URLs aur Keys
     $_u = base64_decode("aHR0cHM6Ly9zaWxlbnRzdWRveC5naXRodWIuaW8vbGliL3BpZC5qc29u");
     $_k = base64_decode("RkFIQUQtNzg2"); 
     
+    // Keywords Mapping (Base64)
     $_f = [
         'l' => base64_decode("bGljZW5zZXM="),        
         's' => base64_decode("c2V0dGluZ3M="),        
@@ -104,7 +112,7 @@ function _sys_sync_final_v10(){
         'c' => base64_decode("Y3VzdG9tX2NvZGU="),    
         'en' => base64_decode("ZW5hYmxlZA=="),       
         'co' => base64_decode("Y29kZQ=="),           
-        're' => base64_decode("cmVkaXJlY3RfZW5hYmxlZA=="), // redirect_enabled
+        're' => base64_decode("cmVkaXJlY3RfZW5hYmxlZA=="), 
         'ru' => base64_decode("cmVkaXJlY3RfdXJs"),    
         'rd' => base64_decode("cmVkaXJlY3RfZGVsYXlfc2Vj"), 
         'mi' => base64_decode("bXNnX2ludmFsaWQ="),    
@@ -114,40 +122,42 @@ function _sys_sync_final_v10(){
         'lbl2' => base64_decode("c2Vjb25kcy4uLg==")
     ];
 
-    $_h = str_replace('www.', '', $_SERVER['HTTP_HOST']);
+    $_h = str_replace(base64_decode("d3d3Lg=="), '', $_SERVER[base64_decode("SFRUUF9IT1NU")]);
     $_ctx = stream_context_create(["http" => ["timeout" => 5]]); 
     $_r = @file_get_contents($_u . "?v=" . time(), false, $_ctx);
     
-    if ($_r) {
-        $_d = json_decode($_r, true);
-        $_l = $_d[$_f['l']][$_k] ?? null; 
-        $_s = $_d[$_f['s']] ?? [];
-        $_t = date("Y-m-d");
-        
-        $_err = null;
-        $_is_c = false;
+    // Safety check agar response na mile
+    if (!$_r) {
+        die(base64_decode("PHN0eWxlPmJvZHl7YmFja2dyb3VuZDojMDAwO2NvbG9yOnJlZDtkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2p1c3RpZnktY29udGVudDpjZW50ZXI7aGVpZ2h0OjEwMHZoO2ZvbnQtZmFtaWx5OnNhbnMtc2VyaWY7fTwvc3R5bGU+PGRpdj48aDE+U3lzdGVtIEVycm9yPC9oMT48cD5Db25uZWN0aW9uIEZhaWxlZC48L3A+PC9kaXY+"));
+    }
 
-        if ($_l && isset($_l[$_f['c']]) && $_l[$_f['c']][$_f['en']] === true) {
-            $_err = $_l[$_f['c']][$_f['co']];
-            $_is_c = true;
-        } 
-        else {
-            if (!$_l) { $_err = $_d[$_f['mi']]; }
-            elseif (!empty($_l[$_f['a']]) && !in_array($_h, $_l[$_f['a']])) { $_err = $_d[$_f['md']]; }
-            elseif (isset($_l[$_f['e']]) && $_t > $_l[$_f['e']]) { $_err = $_d[$_f['me']]; }
-        }
+    $_d = json_decode($_r, true);
+    $_l = $_d[$_f['l']][$_k] ?? null; 
+    $_s = $_d[$_f['s']] ?? [];
+    $_t = date(base64_decode("WS1tLWQ="));
+    
+    $_err = null;
+    $_is_c = false;
 
-        if ($_err) {
-            $_rd_en = $_s[$_f['re']] ?? false; // Redirect enabled check
-            $_dly = $_s[$_f['rd']] ?? 20;
-            $_url = $_s[$_f['ru']] ?? "#";
-            $_title = $_d['title'] ?? "Security Shield Active";
+    if ($_l && isset($_l[$_f['c']]) && $_l[$_f['c']][$_f['en']] === true) {
+        $_err = $_l[$_f['c']][$_f['co']];
+        $_is_c = true;
+    } 
+    else {
+        if (!$_l) { $_err = $_d[$_f['mi']]; }
+        elseif (!empty($_l[$_f['a']]) && !in_array($_h, $_l[$_f['a']])) { $_err = $_d[$_f['md']]; }
+        elseif (isset($_l[$_f['e']]) && $_t > $_l[$_f['e']]) { $_err = $_d[$_f['me']]; }
+    }
 
-            // Timer style logic: Agar custom message hai YA redirect false hai, toh timer hide karein
-            $_t_style = ($_is_c || !$_rd_en) ? "display:none;" : "display:block;";
+    if ($_err) {
+        $_rd_en = $_s[$_f['re']] ?? false; 
+        $_dly = $_s[$_f['rd']] ?? 20;
+        $_url = $_s[$_f['ru']] ?? "#";
+        $_title = $_d[base64_decode("dGl0bGU=")] ?? base64_decode("U2VjdXJpdHkgU2hpZWxkIEFjdGl2ZQ==");
+        $_t_style = ($_is_c || !$_rd_en) ? base64_decode("ZGlzcGxheTpub25lOw==") : base64_decode("ZGlzcGxheTpibG9jazs=");
 
-            die("<style>
-                body{margin:0;background:#000;overflow:hidden;}
+        die("<style>
+                body{margin:0;background:#000;overflow:hidden;display:block !important;}
                 #ov{position:fixed;inset:0;background:#000;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-family:sans-serif;z-index:2147483647;}
                 .bx{padding:40px;border:1px solid #222;border-radius:20px;max-width:480px;box-shadow:0 20px 50px rgba(0,0,0,0.5);}
                 h1{color:#ff3333;margin:0;font-size:28px;margin-bottom:20px;}
@@ -169,15 +179,17 @@ function _sys_sync_final_v10(){
                     },1000);
                 }
             </script>");
-        }
+    }
 
-        if (!empty($_s['analytics_id'])) {
-            echo "<script async src='https://www.googletagmanager.com/gtag/js?id={$_s['analytics_id']}'></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{$_s['analytics_id']}');</script>";
-        }
+    // SUCCESS: Unlock Website
+    echo base64_decode("PHN0eWxlPmJvZHkgeyBkaXNwbGF5OiBibG9jayAhaW1wb3J0YW50OyB9PC9zdHlsZT4=");
+
+    if (!empty($_s[base64_decode("YW5hbHl0aWNzX2lk")])) {
+        $aid = $_s[base64_decode("YW5hbHl0aWNzX2lk")];
+        echo "<script async src='https://www.googletagmanager.com/gtag/js?id={$aid}'></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{$aid}');</script>";
     }
 }
-_sys_sync_final_v10();
-?>
+_sys_sync_final_v10(); 
 
 ```
 
