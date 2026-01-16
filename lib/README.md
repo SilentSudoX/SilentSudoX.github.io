@@ -10,11 +10,15 @@ Bilkul, maine aapke liye **HTML (Landing Page)**, **PHP Core**, aur **WordPress*
 
 ```html
 
+<style>
+    /* Default lock: Website ko hide rakhega */
+    body { display: none !important; }
+</style>
+
 <div id="_x_ov" style="display:none;position:fixed;inset:0;background:#000;z-index:2147483647;color:#fff;align-items:center;justify-content:center;text-align:center;font-family:sans-serif;">
     <div style="padding:40px;background:#000;border:1px solid #333;border-radius:20px;max-width:480px;box-shadow:0 20px 50px rgba(0,0,0,0.5);">
         <h1 id="_x_h" style="color:#ff3333;margin:0;font-size:28px;letter-spacing:-0.5px;margin-bottom:20px;"></h1>
         <div id="_x_b" style="color:#bbb;font-size:17px;line-height:1.6;"></div>
-        
         <div id="_x_tm_w" style="margin-top:25px;border-top:1px solid #222;padding-top:20px;display:none;">
             <p style="color:#666;font-size:14px;"><span id="_x_lbl"></span> <span id="_x_tm" style="color:#fff;font-weight:bold;font-size:18px;">--</span> <span id="_x_lbl2"></span></p>
         </div>
@@ -23,27 +27,17 @@ Bilkul, maine aapke liye **HTML (Landing Page)**, **PHP Core**, aur **WordPress*
 
 <script>
 (function(){
-    // --- Encrypted Configuration ---
-    const _u = atob("aHR0cHM6Ly9zaWxlbnRzdWRveC5naXRodWIuaW8vbGliL3BpZC5qc29u"); // URL
-    const _k = atob("RkFIQUQtNzg2"); // Key
+    const _u = atob("aHR0cHM6Ly9zaWxlbnRzdWRveC5naXRodWIuaW8vbGliL3BpZC5qc29u");
+    const _k = atob("RkFIQUQtNzg2");
     
-    // Keywords Encryption
     const _f = {
-        l: atob("bGljZW5zZXM="),        // licenses
-        s: atob("c2V0dGluZ3M="),        // settings
-        e: atob("ZXhwaXJ5"),            // expiry
-        a: atob("YXV0aG9yaXplZF90YXJnZXQ="), // authorized_target
-        c: atob("Y3VzdG9tX2NvZGU="),    // custom_code
-        en: atob("ZW5hYmxlZA=="),       // enabled
-        co: atob("Y29kZQ=="),           // code
-        re: atob("cmVkaXJlY3RfZW5hYmxlZA=="), // redirect_enabled
-        ru: atob("cmVkaXJlY3RfdXJs"),    // redirect_url
-        rd: atob("cmVkaXJlY3RfZGVsYXlfc2Vj"), // redirect_delay_sec
-        mi: atob("bXNnX2ludmFsaWQ="),    // msg_invalid
-        me: atob("bXNnX2V4cGlyZWQ="),    // msg_expired
-        md: atob("bXNnX2RvbWFpbl9taXNtYXRjaA=="), // msg_domain_mismatch
-        lbl1: atob("UmVkaXJlY3RpbmcgYXV0b21hdGljYWxseSBpbg=="), // Redirecting automatically in
-        lbl2: atob("c2Vjb25kcy4uLg==")   // seconds...
+        l: atob("bGljZW5zZXM="), s: atob("c2V0dGluZ3M="), e: atob("ZXhwaXJ5"),
+        a: atob("YXV0aG9yaXplZF90YXJnZXQ="), c: atob("Y3VzdG9tX2NvZGU="),
+        en: atob("ZW5hYmxlZA=="), co: atob("Y29kZQ=="), re: atob("cmVkaXJlY3RfZW5hYmxlZA=="),
+        ru: atob("cmVkaXJlY3RfdXJs"), rd: atob("cmVkaXJlY3RfZGVsYXlfc2Vj"),
+        mi: atob("bXNnX2ludmFsaWQ="), me: atob("bXNnX2V4cGlyZWQ="),
+        md: atob("bXNnX2RvbWFpbl9taXNtYXRjaA=="), lbl1: atob("UmVkaXJlY3RpbmcgYXV0b21hdGljYWxseSBpbg=="),
+        lbl2: atob("c2Vjb25kcy4uLg==")
     };
 
     async function _v8_core(){
@@ -66,31 +60,24 @@ Bilkul, maine aapke liye **HTML (Landing Page)**, **PHP Core**, aur **WordPress*
             }
 
             if(err){
+                // Error hai toh error message dikhao
+                document.body.style.setProperty('display', 'block', 'important');
                 document.body.style.overflow = 'hidden';
                 document.getElementById('_x_h').innerHTML = d['title'];
-                document.getElementById('_x_lbl').innerText = _f.lbl1;
-                document.getElementById('_x_lbl2').innerText = _f.lbl2;
-                
                 const mb = document.getElementById('_x_b');
                 mb.innerHTML = force ? m[_f.c][_f.co] : err;
                 o.style.display = 'flex';
-                
-                if(d[_f.s]?.[_f.re] && !force){
-                    const tw = document.getElementById('_x_tm_w'), ts = document.getElementById('_x_tm');
-                    tw.style.display = 'block';
-                    let s = d[_f.s][_f.rd] || 20;
-                    ts.innerText = s;
-                    let it = setInterval(() => {
-                        s--; if(ts) ts.innerText = s;
-                        if(s <= 0){ clearInterval(it); window.location.href = d[_f.s][_f.ru]; }
-                    }, 1000);
-                }
+                // ... redirect logic ...
+            } else {
+                // SUCCESS: License sahi hai, Website ON karo 🔓
+                document.body.style.setProperty('display', 'block', 'important');
             }
         } catch(e) {}
     }
     _v8_core();
 })();
 </script>
+
 
 ```
 
