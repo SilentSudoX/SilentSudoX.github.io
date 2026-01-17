@@ -19,6 +19,9 @@
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -30,6 +33,9 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Alice', 'serif'],
+                    },
                     colors: {
                         indigo: {
                             50: '#eef2ff',
@@ -68,7 +74,7 @@
                 <a href="index.html" class="text-2xl font-black text-gray-900 dark:text-white tracking-tight" aria-label="SilentSudoX Home">Silent<span class="text-indigo-600 dark:text-indigo-400">SudoX</span></a>
             </div>
             
-            <div class="hidden md:flex space-x-8 font-semibold text-sm">
+            <div class="hidden md:flex space-x-8 font-semibold text-base">
                 <a href="index.html" class="nav-link hover:text-indigo-600 transition">Home</a>
                 <a href="index.html#services" class="nav-link hover:text-indigo-600 transition">Services</a>
                 <a href="#" class="nav-link text-indigo-600 active">Solutions Marketplace</a>
