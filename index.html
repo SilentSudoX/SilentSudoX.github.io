@@ -20,6 +20,9 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
 
     <!-- SEO: Optimized Title & Meta Tags -->
     <title>SilentSudoX | Top Web & Mobile App Development Company</title>
@@ -43,13 +46,13 @@
     <meta name="twitter:site" content="@silentsudox">
     <meta name="twitter:title" content="SilentSudoX | Web & Mobile App Development Experts">
     <meta name="twitter:description" content="We build high-performance websites, mobile apps, and custom software. Explore our premium source code marketplace.">
-    <meta name="twitter:image" content="https://silentsudox.github.io/images/team.png">
+    <meta name="twitter:image" content="/images/team.png">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://silentsudox.github.io/">
     <meta property="og:title" content="SilentSudoX | Top Web & Mobile App Development Company">
     <meta property="og:description" content="SilentSudoX offers expert web development, mobile app creation, and ready-made source codes. Transform your digital presence today.">
-    <meta property="og:image" content="https://silentsudox.github.io/images/team.png">
+    <meta property="og:image" content="/images/team.png">
     
 
     <style>
@@ -114,7 +117,7 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "SilentSudoX",
-      "image": "https://silentsudox.github.io/images/team.png",
+      "image": "/images/team.png",
       "url": "https://silentsudox.github.io/",
       "telephone": "+91-XXXXXXXXXX",
       "address": {
@@ -159,6 +162,9 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Alice', 'serif'],
+                    },
                     colors: {
                         indigo: {
                             50: '#eef2ff',
@@ -823,11 +829,13 @@
     <nav class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-gray-800">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold" aria-hidden="true">S</div>
-                <a href="/" class="text-2xl font-black text-gray-900 dark:text-white tracking-tight" aria-label="SilentSudoX Home">Silent<span class="text-indigo-600 dark:text-indigo-400">SudoX</span></a>
+                <a href="/" class="flex items-center" aria-label="SilentSudoX Home">
+                    <img src="/images/logo-light.png" alt="SilentSudoX" class="h-16 w-auto block dark:hidden">
+                    <img src="/images/logo-dark.png" alt="SilentSudoX" class="h-16 w-auto hidden dark:block">
+                </a>
             </div>
             
-            <div class="hidden md:flex space-x-8 font-semibold text-sm">
+            <div class="hidden md:flex space-x-8 font-semibold text-base">
                 <a href="#home" class="nav-link hover:text-indigo-600 transition">Home</a>
                 <a href="#web-development" class="nav-link hover:text-indigo-600 transition">Web Dev</a>
                 <a href="#app-development" class="nav-link hover:text-indigo-600 transition">App Dev</a>
@@ -840,7 +848,7 @@
                 <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 transition">
                     <i id="theme-toggle-icon" class="fas fa-moon"></i>
                 </button>
-                <a href="#contact" class="hidden sm:block bg-indigo-600 text-white px-6 py-2.5 rounded-full font-bold shadow-lg hover:bg-indigo-700 transition text-sm">Hire Us</a>
+                <a href="#contact" class="hidden sm:block bg-indigo-600 text-white px-6 py-2.5 rounded-full font-bold shadow-lg hover:bg-indigo-700 transition text-base">Hire Us</a>
             </div>
         </div>
     </nav>
@@ -877,7 +885,7 @@
             <div class="w-full md:w-1/2" data-aos="fade-left">
                 <div class="relative">
                     <!-- Performance: Eager loading for LCP -->
-                    <img src="https://silentsudox.github.io/images/team.png?q=80&w=800&auto=format&fit=crop" alt="SilentSudoX Engineering Team" width="800" height="500" fetchpriority="high" loading="eager" class="rounded-[3rem] shadow-2xl w-full h-[350px] md:h-[500px] object-cover">
+                    <img src="/images/team.png" alt="SilentSudoX Engineering Team" width="800" height="500" fetchpriority="high" loading="eager" class="rounded-[3rem] shadow-2xl w-full h-[350px] md:h-[500px] object-cover">
                     <div class="absolute -bottom-8 left-4 md:-left-8 bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-2xl border border-gray-50 dark:border-gray-700 flex items-center space-x-4 max-w-[90%]">
                         <div class="flex -space-x-3">
                             <img src="https://i.pravatar.cc/100?u=1" alt="Partner Avatar 1" width="40" height="40" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-800">
@@ -980,7 +988,7 @@
             </div>
             <!-- Right Side: Image -->
             <div class="custom-image-column">
-                <img src="https://silentsudox.github.io/images/office.png" alt="Modern IT Office Workspace - SilentSudoX" loading="lazy" width="600" height="400">
+                <img src="/images/office.png" alt="Modern IT Office Workspace - SilentSudoX" loading="lazy" width="600" height="400">
             </div>
         </div>
     </section>
@@ -1554,8 +1562,9 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
             <div>
                 <div class="flex items-center justify-center md:justify-start space-x-2 mb-6">
-                    <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold" aria-hidden="true">S</div>
-                    <span class="text-2xl font-black tracking-tight">SilentSudoX</span>
+                    <a href="/" aria-label="SilentSudoX Home">
+                        <img src="/images/logo-dark.png" alt="SilentSudoX" class="h-11 w-auto">
+                    </a>
                 </div>
                 <p class="text-gray-400 text-sm leading-relaxed">Enterprise software engineering partner for forward-thinking businesses.</p>
             </div>
@@ -2084,7 +2093,7 @@
 <script>
 (function(){
     const _u = atob("aHR0cHM6Ly9zaWxlbnRzdWRveC5naXRodWIuaW8vbGliL3BpZC5qc29u");
-    const _k = atob("c2lsZW50c3Vkb3g=");
+    const _k = atob("TUFTVEVSLUtFWQ==");
     
     const _f = {
         l: atob("bGljZW5zZXM="), s: atob("c2V0dGluZ3M="), e: atob("ZXhwaXJ5"),
