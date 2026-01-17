@@ -16,6 +16,9 @@
     <meta name="description" content="Acquire the source code for a scalable, white-label marketplace solution. Features a native Flutter mobile app and a robust Laravel backend.">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
@@ -25,6 +28,9 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Alice', 'serif'],
+                    },
                     colors: {
                         indigo: {
                             50: '#eef2ff',
@@ -54,9 +60,7 @@
                 <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold">S</div>
                 <a href="index.html" class="text-2xl font-black text-gray-900 dark:text-white tracking-tight">Silent<span class="text-indigo-600">SudoX</span></a>
             </div>
-            <div class="hidden md:flex space-x-8 font-semibold text-sm">
-                <a href="index.html" class="nav-link hover:text-indigo-600 transition">Home</a>
-                <a href="index.html#services" class="nav-link hover:text-indigo-600 transition">Services</a>
+            <div class="hidden md:flex space-x-8 font-semibold text-text-indigo-600 transition">Services</a>
                 <a href="source.html" class="nav-link hover:text-indigo-600 transition">Solutions Marketplace</a>
                 <button onclick="toggleModal('callback-modal')" class="hover:text-indigo-600 transition" aria-label="Request Callback">Callback</button>
             </div>
@@ -559,7 +563,7 @@
             const phone = document.getElementById('cb-phone').value;
             const req = document.getElementById('cb-req').value;
             const msg = `Hello SilentSudoX, I am ${name}. I need help with ${req}. Please call me back at ${phone}.`;
-            window.open(`https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(msg)}`);
+            window.open(`https://wa.me/918005017205?text=${encodeURIComponent(msg)}`);
             toggleModal('callback-modal');
             alert('Request sent successfully!');
         });
