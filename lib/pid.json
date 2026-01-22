@@ -19,29 +19,29 @@
       "custom_code": { "enabled": false, "code": "" },
       "note": "bindasapp live cyber panel"
     },
-    "TECH-GURU-03": { 
-      "expiry": "2026-07-20", 
+    "deepakcarp": { 
+      "expiry": "2030-07-20", 
       "authorized_target": [], 
       "custom_code": { "enabled": false, "code": "" },
-      "note": "Client: Tech Guru Project"
+      "note": "Deepak Corporation Website"
     },
-    "SMART-WEB-04": { 
-      "expiry": "2026-08-01", 
+    "Hussnain": { 
+      "expiry": "2030-08-01", 
       "authorized_target": ["smartweb.org"], 
       "custom_code": { "enabled": false, "code": "" },
-      "note": "Client: Smart Web Solutions"
+      "note": "hussnain.com website"
     },
-    "LUX-SHOP-05": { 
-      "expiry": "2026-09-10", 
+    "NBIntl": { 
+      "expiry": "2030-09-10", 
       "authorized_target": [], 
       "custom_code": { "enabled": false, "code": "" },
-      "note": "Client: Luxury Shop eCommerce"
+      "note": "NB international"
     },
-    "PORTFOLIO-06": { 
+    "Brasage": { 
       "expiry": "2026-10-01", 
       "authorized_target": ["myportfolio.com"], 
       "custom_code": { "enabled": false, "code": "" },
-      "note": "Client: Personal Portfolio"
+      "note": "brassag.net website"
     },
     "ECOM-HUB-07": { 
       "expiry": "2026-11-20", 
