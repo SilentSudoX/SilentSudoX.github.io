@@ -13,11 +13,11 @@
       "custom_code": { "enabled": false, "code": "" },
       "note": "silentsudox Landing Page"
     },
-    "WP-PRO-02": { 
-      "expiry": "2026-06-15", 
-      "authorized_target": ["client2.com"], 
+    "bindasapp": { 
+      "expiry": "2028-02-16", 
+      "authorized_target": [], 
       "custom_code": { "enabled": false, "code": "" },
-      "note": "Client: WordPress Premium"
+      "note": "bindasapp live cyber panel"
     },
     "TECH-GURU-03": { 
       "expiry": "2026-07-20", 
