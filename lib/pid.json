@@ -15,8 +15,8 @@
     },
     "bindasapp": { 
       "expiry": "2028-02-16", 
-      "authorized_target": [], 
-      "custom_code": { "enabled": false, "code": "bindasapp.com" },
+      "authorized_target": ["bindasapp.com"], 
+      "custom_code": { "enabled": false, "code": "" },
       "note": "bindasapp live cyber panel"
     },
     "deepakcarp": { 
