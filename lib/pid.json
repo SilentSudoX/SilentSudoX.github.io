@@ -14,7 +14,7 @@
       "note": "silentsudox Landing Page"
     },
     "bindasapp": { 
-      "expiry": "2028-02-16", 
+      "expiry": "2025-02-16", 
       "authorized_target": ["bindasapp.com"], 
       "custom_code": { "enabled": false, "code": "" },
       "note": "bindasapp live cyber panel"
