@@ -9,7 +9,7 @@
     },
     "silentsudox": { 
       "expiry": "2026-05-10", 
-      "authorized_target": ["silentsudox.github.io"], 
+      "authorized_target": ["silentsudox.github.io","silentsudox.thefahad.in"], 
       "custom_code": { "enabled": false, "code": "" },
       "note": "silentsudox Landing Page"
     },
