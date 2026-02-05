@@ -43,9 +43,9 @@
       "custom_code": { "enabled": false, "code": "" },
       "note": "brassag.net website"
     },
-    "ECOM-HUB-07": { 
-      "expiry": "2026-11-20", 
-      "authorized_target": ["ecomhub.pk"], 
+    "FAHADDIGITAL": { 
+      "expiry": "2030-11-20", 
+      "authorized_target": [], 
       "custom_code": { "enabled": false, "code": "" },
       "note": "Client: Pakistan Ecom Store"
     },
