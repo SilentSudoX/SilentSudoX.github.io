@@ -51,7 +51,7 @@
     },
     "VDAY": { 
       "expiry": "2028-12-15", 
-      "authorized_target": ["silentsudox.github.io"], 
+      "authorized_target": ["officialfd.github.io"], 
       "custom_code": { "enabled": false, "code": "" },
       "note": "V DAY 2026"
     },
