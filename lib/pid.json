@@ -9,7 +9,7 @@
     },
     "silentsudox": { 
       "expiry": "2026-05-10", 
-      "authorized_target": ["silentsudox.github.io","silentsudox.in"], 
+      "authorized_target": ["silentsudox.github.io","silentsudox.in","fahadtech8.github.io","connect.thefahad.in","me.thefahad.in","erp.thefahad.in","thefahad.in","localhost","127.0.0.1","::1","192.168.0.1","192.168.1.1","192.168.1.100","10.0.0.1","10.0.0.2"], 
       "custom_code": { "enabled": false, "code": "" },
       "note": "silentsudox Landing Page"
     },
